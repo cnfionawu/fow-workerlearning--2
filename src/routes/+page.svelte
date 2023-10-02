@@ -1,2 +1,20 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import '../app.css';
+	import Home from './home.svelte';
+	import Game from './game.svelte';
+	import { elapsed, game, earned } from '$lib/stores.js';
+	import { onMount } from 'svelte';
+
+	$: inGame = $game.inGame;
+</script>
+
+<div class="hud">
+	<h3>Time: {$elapsed}</h3>
+	<h3>Earned: {$earned}</h3>
+</div>
+
+{#if inGame}
+	<Game />
+{:else}
+	<Home />
+{/if}

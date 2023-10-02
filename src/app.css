@@ -1,0 +1,70 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+/* CHOICES */
+
+.choices {
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 800px;
+	height: 600px;
+	/* height: 100vh; */
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.card {
+	flex-basis: calc(50% - 40px);
+	margin: 20px;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-content {
+    width: 300px;
+	height: 200px;
+    text-align: center;
+}
+
+/* JOB READY ANIMATION */
+
+@keyframes jobanimate {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.05);
+	}
+}
+.ready {
+	animation: jobanimate 0.5s infinite alternate;
+}
+.ready:hover {
+    cursor: pointer;
+
+}
+
+/* HUD ** */
+
+.hud {
+	position: absolute;
+}
+
+.hud > * {
+    margin: 20px;
+}
+
+
+
+/* * {
+	outline: 1px solid black;
+} */
