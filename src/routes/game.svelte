@@ -1,9 +1,14 @@
 <script>
-	import { history, endGame } from '$lib/stores.js';
+	import { history, game, endGame } from '$lib/stores.js';
 	import { onMount } from 'svelte';
 
 	let timePassed = 0;
-	let stepsLeft = 1;
+	let stepsLeft = $game.numSteps;
+	let timeLimit = $game.timeLimit;
+
+	const wordBank = $game.isUberEats
+		? ['apple', 'coconut', 'banana', 'pineapple']
+		: ['red', 'green', 'yellow'];
 	let currentWord = 'apple';
 	let mistakes = 0;
 
@@ -26,6 +31,9 @@
 			status = 'Correct!';
 			userInput = '';
 			stepsLeft--;
+			if (stepsLeft > 0) {
+				currentWord = wordBank[stepsLeft % 4];
+			}
 		} else {
 			status = 'Incorrect. Try again.';
 			mistakes++;
@@ -39,18 +47,21 @@
 	}
 
 	function finish() {
+		console.log($history);
 		history.update((list) => {
-			list.push(`finished: ${mistakes} mistakes, ${timePassed} s left`);
+			list.push(`finished: ${mistakes} mistakes in ${timePassed} s`);
 			return list;
 		});
-		console.log($history);
-		endGame();
+		const penalty = timePassed > timeLimit ? Math.min(timePassed - timeLimit, $game.earnings) : 0;
+		endGame($game.earnings - penalty);
 	}
 </script>
 
 <div class="page">
 	<div class="game">
-		<h3>Timer: {20 - timePassed} (Debug time taken: {timePassed})</h3>
+		<h3 class:err={timePassed > timeLimit}>
+			Timer: {timeLimit - timePassed} (Debug time taken: {timePassed})
+		</h3>
 		<p>Left: {stepsLeft}</p>
 
 		<img id="input-img" src="./images/{currentWord}.jpg" alt="img" />

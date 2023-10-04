@@ -7,17 +7,25 @@ export const game = writable({
 	inGame: false
 });
 
-export function startGame() {
-	console.log("Starting");
+export function startGame(isUberEats, earnings, numSteps, timeLimit) {
+	console.log('Starting');
+
 	game.set({
-		inGame: true
-	})
+		inGame: true,
+		isUberEats: true,
+		earnings: earnings,
+		numSteps: numSteps,
+		timeLimit: timeLimit
+	});
 }
-export function endGame() {
-	console.log("Ending");
+export function endGame(gained) {
+	console.log('Ending');
+
+	earned.update((n) => n + gained );
+
 	game.set({
 		inGame: false
-	})
+	});
 }
 
 export const time = readable(new Date(), function start(set) {

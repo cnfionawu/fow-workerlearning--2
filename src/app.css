@@ -60,9 +60,12 @@ body {
 }
 
 .hud > * {
-    margin: 20px;
+	margin: 20px;
 }
 
+.err {
+	color: red;
+}
 
 
 /* * {

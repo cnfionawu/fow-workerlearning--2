@@ -17,14 +17,17 @@
 
 	$: ready = countdown <= 0;
 
-	function handleClick() {
+	function start() {
 		if (ready) {
 			history.update((list) => {
 				list.push('start: ' + title);
 				return list;
 			});
+			
+			const numSteps = 5, 
+				timeLimit = 20;
+			startGame(title, earnings, numSteps, timeLimit);
 			console.log($history);
-			startGame();
 		}
 	}
 </script>
@@ -32,7 +35,7 @@
 <div class="card">
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="card-content" class:ready style="background: {color};" on:click={handleClick}>
+	<div class="card-content" class:ready style="background: {color};" on:click={start}>
 		<h2>{title}</h2>
 
 		{#if !ready}
