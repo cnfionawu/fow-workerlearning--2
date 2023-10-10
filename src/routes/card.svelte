@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { history, startGame } from '$lib/stores.js';
+	import { history, startGame, logHistory } from '$lib/stores.js';
 
 	export let title;
 	export let color;
@@ -21,13 +21,8 @@
 
 	function start() {
 		if (ready) {
-			history.update((list) => {
-				// list.push('start: ' + title);
-				list.push({ status: 'start', title: title });
-				return list;
-			});
+			logHistory(`chose task ${title}`);
 
-			// numSteps = 5;
 			const timeLimit = 5;
 			startGame(title, earnings, numSteps, timeLimit, hardLimit);
 			console.log($history);

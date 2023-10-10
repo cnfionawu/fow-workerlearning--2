@@ -3,25 +3,35 @@ import { writable, readable, derived } from 'svelte/store';
 
 /* Time Stamps & History */
 
-let start = new Date();
+let start;
+
+export function resetTimer() {
+	start = new Date();
+}
 
 const time = readable(new Date(), function start(set) {
 	const interval = setInterval(() => {
 		set(new Date());
-	}, 100);
+	}, 10);
 
 	return function stop() {
 		clearInterval(interval);
 	};
 });
 
-const timeStamp = derived(time, ($time) => $time - start);
+export const timeStamp = derived(time, ($time) => $time - start);
 
 export const history = writable([]);
 
-export function historyLog(message) {
+let t;
+timeStamp.subscribe((v) => {
+	t = v / 1000;
+});
+
+export function logHistory(message) {
+	console.log('DEBUG', t);
 	history.update((list) => {
-		list.push({ time: $timeStamp, event: message });
+		list.push({ time: t || 0.0, event: message });
 		return list;
 	});
 }

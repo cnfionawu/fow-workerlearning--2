@@ -9,7 +9,7 @@
     let mistake = lastEntry.mistakes;
     let earning = lastEntry.earning;
     let hardLimit = lastEntry.hardLimit;
-    const proficiencyText = ["Very Well", "Badly"];
+    const proficiencyText = ["Good", "Bad"];
 
     function returnHome() {
         $game.inSummary = false;
@@ -88,18 +88,5 @@
         font-size: 16px;
     }
 
-    button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-top: 20px;
-    }
 
-    button:hover {
-        background-color: #0056b3;
-    }
 </style>

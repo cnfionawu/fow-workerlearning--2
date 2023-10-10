@@ -96,35 +96,3 @@
 		<div class="status">{status}</div>
 	</div>
 </div>
-
-<style>
-	.page {
-		height: 100vh;
-		width: 100vw;
-		display: flex;
-		justify-content: center;
-	}
-
-	.game {
-		margin: auto;
-		height: 50vh;
-		width: 50vw;
-		text-align: center;
-	}
-
-	.status {
-		color: grey;
-	}
-
-	img {
-		display: block;
-		margin: auto;
-		width: 250px;
-	}
-
-	input {
-		width: 200px;
-		padding: 10px;
-		margin: 10px auto;
-	}
-</style>
