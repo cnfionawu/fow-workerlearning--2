@@ -6,7 +6,8 @@
 	import Final from './final.svelte';
 	import { elapsed, game, earned, history, logHistory, resetTimer } from '$lib/stores.js';
 
-	const timeLimit = 300;
+	const timeLimit = 30
+	;
 
 	$: inGame = $game.inGame;
 	$: timeUp = $elapsed > timeLimit;
@@ -44,8 +45,9 @@
 {:else if timeUp}
 	<Final />
 {:else}
-	<Home />
+	<Home />	
 {/if}
+
 
 <div>
 	<i>history:</i>

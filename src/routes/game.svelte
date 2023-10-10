@@ -1,24 +1,30 @@
 <script>
-	import { history, game, endGame } from '$lib/stores.js';
-	import { onMount } from 'svelte';
+	import { game, endGame, logHistory } from '$lib/stores.js';
+	import { onMount, setContext } from 'svelte';
 
+	/* GAME STATE */
 	let timePassed = 0;
 	let stepsLeft = $game.numSteps;
 	let timeLimit = $game.timeLimit;
 	let job = $game.title;
 	let hardLimit = $game.hardLimit;
-	const lastEntry = $history[$history.length - 1];
 
+	/* WORD LIST */
 	const wordBank = $game.isUberEats
 		? ['apple', 'coconut', 'banana', 'pineapple']
 		: ['red', 'green', 'yellow'];
-	let currentWord = wordBank[0];
+	let currentWord = wordBank[stepsLeft % wordBank.length];
 	let mistakes = 0;
 
+	/* User Input (reactive ui elem) */
 	let userInput = '';
 	let status = 'type!';
 
+	/* Start Timer */
 	onMount(() => {
+		logHistory(
+			`Task ${job} was started with: ${stepsLeft} steps, ${timeLimit} timeLimit, ${hardLimit} hardLimit`
+		);
 		setInterval(() => {
 			if (stepsLeft > 0) {
 				timePassed++;
@@ -31,6 +37,7 @@
 		const userAnswer = userInput.toLowerCase();
 
 		if (userAnswer === currentWord) {
+			logHistory(`Correct Guess: ${currentWord}`);
 			status = 'Correct!';
 			userInput = '';
 			stepsLeft--;
@@ -38,6 +45,7 @@
 				currentWord = wordBank[stepsLeft % wordBank.length];
 			}
 		} else {
+			logHistory(`Inorrect Guess: ${currentWord}`);
 			status = 'Incorrect. Try again.';
 			mistakes++;
 		}
@@ -49,34 +57,46 @@
 		}
 	}
 
+	// const lastEntry = $history[$history.length - 1];
+
 	function finish() {
 		const penalty = timePassed > timeLimit ? Math.min(timePassed - timeLimit, $game.earnings) : 0;
-		lastEntry.status = 'finished';
-		lastEntry.mistakes = mistakes;
-		lastEntry.earning = $game.earnings - penalty;
-		lastEntry.time = timePassed;
-		lastEntry.hardLimit = hardLimit
-		history.update((list) => {
-		// 	list.push({
-        //     status: 'finished',
-        //     mistakes: mistakes,
-		// 	earning: $game.earnings - penalty,
-        //     time: timePassed,
-        // });
-			list[$history.length - 1] = lastEntry;
-			return list;
-		});
+		// const penalty = 0;
+		const earned = $game.earnings - penalty;
+		logHistory(
+			`finished with: ${mistakes} mistakes, ${earned} earned, ${timePassed} in game time passed`
+		);
+
+		const gameState = {};
+
+		gameState.title = job;
+		gameState.status = 'finished';
+		gameState.mistakes = mistakes;
+		gameState.earning = $game.earnings - penalty;
+		gameState.time = timePassed;
+		gameState.hardLimit = hardLimit;
+
+		// history.update((list) => {
+		// // 	list.push({
+		// //     status: 'finished',
+		// //     mistakes: mistakes,
+		// // 	earning: $game.earnings - penalty,
+		// //     time: timePassed,
+		// // });
+		// 	list[$history.length - 1] = lastEntry;
+		// 	return list;
+		// });
 		// const penalty = timePassed > timeLimit ? Math.min(timePassed - timeLimit, $game.earnings) : 0;
 		// endGame($game.earnings - penalty);
-		endGame($game.earnings);
+		endGame(earned, gameState);
 	}
-	
+
 	$: {
-  		if (stepsLeft <= 0) {
+		if (stepsLeft <= 0) {
 			finish();
 		}
 
-  		if (timePassed >= hardLimit) {
+		if (timePassed >= hardLimit) {
 			finish();
 		}
 	}
@@ -96,3 +116,11 @@
 		<div class="status">{status}</div>
 	</div>
 </div>
+
+<style>
+	img {
+		display: block;
+		margin: auto;
+		height: 250px;
+	}
+</style>

@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { history, startGame, logHistory } from '$lib/stores.js';
+	import { startGame, logHistory } from '$lib/stores.js';
 
 	export let title;
 	export let color;
@@ -25,7 +25,6 @@
 
 			const timeLimit = 5;
 			startGame(title, earnings, numSteps, timeLimit, hardLimit);
-			console.log($history);
 		}
 	}
 </script>

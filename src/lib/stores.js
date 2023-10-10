@@ -32,6 +32,7 @@ export function logHistory(message) {
 	console.log('DEBUG', t);
 	history.update((list) => {
 		list.push({ time: t || 0.0, event: message });
+		console.log(list);
 		return list;
 	});
 }
@@ -59,15 +60,18 @@ export function startGame(isUberEats, earnings, numSteps, timeLimit, hardLimit) 
 	console.log(isUberEats.includes('UberEats'));
 }
 
-export function endGame(gained) {
+export function endGame(gained, gameState) {
 	console.log('Ending');
 
 	earned.update((n) => n + gained);
 
-	game.set({
-		inGame: false,
-		inSummary: true
-	});
+	// game.set({
+	// 	inGame: false,
+	// 	inSummary: true
+	// });
+	gameState.inGame = false;
+	gameState.inSummary = true;
+	game.set(gameState);
 }
 
 export const elapsed = derived(timeStamp, ($timeStamp) => Math.round($timeStamp / 1000));

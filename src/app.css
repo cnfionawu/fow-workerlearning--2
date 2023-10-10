@@ -89,12 +89,6 @@ body {
 	color: grey;
 }
 
-img {
-	display: block;
-	margin: auto;
-	width: 250px;
-}
-
 input {
 	width: 200px;
 	padding: 10px;
