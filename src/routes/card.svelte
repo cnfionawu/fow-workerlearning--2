@@ -9,7 +9,7 @@
 
 	let countdown = waitTime;
 	let numSteps = 5;
-	let hardLimit = 30;
+	let hardLimit = 10;
 
 	onMount(() => {
 		setInterval(() => {
@@ -28,7 +28,7 @@
 			});
 			
 			// numSteps = 5;
-			const timeLimit = 20;
+			const timeLimit = 5;
 			startGame(title, earnings, numSteps, timeLimit, hardLimit);
 			console.log($history);
 		}

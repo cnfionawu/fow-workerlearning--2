@@ -7,6 +7,7 @@
 	let timeLimit = $game.timeLimit;
 	let job = $game.title;
 	let hardLimit = $game.hardLimit;
+	const lastEntry = $history[$history.length - 1];
 
 	const wordBank = $game.isUberEats
 		? ['apple', 'coconut', 'banana', 'pineapple']
@@ -50,13 +51,19 @@
 
 	function finish() {
 		const penalty = timePassed > timeLimit ? Math.min(timePassed - timeLimit, $game.earnings) : 0;
+		lastEntry.status = 'finished';
+		lastEntry.mistakes = mistakes;
+		lastEntry.earning = $game.earnings - penalty;
+		lastEntry.time = timePassed;
+		lastEntry.hardLimit = hardLimit
 		history.update((list) => {
-			list.push({
-            status: 'finished',
-            mistakes: mistakes,
-			earning: $game.earnings - penalty,
-            time: timePassed,
-        });
+		// 	list.push({
+        //     status: 'finished',
+        //     mistakes: mistakes,
+		// 	earning: $game.earnings - penalty,
+        //     time: timePassed,
+        // });
+			list[$history.length - 1] = lastEntry;
 			return list;
 		});
 		console.log($history);
@@ -69,7 +76,6 @@
 		}
 
   		if (timePassed >= hardLimit) {
-			// change
 			finish();
 		}
 	}
@@ -87,11 +93,6 @@
 		<input bind:value={userInput} type="text" placeholder="Input" on:keyup={handleKeyUp} />
 
 		<div class="status">{status}</div>
-
-		<!-- {#if stepsLeft <= 0}
-			<button on:click={finish}>Return</button>
-		
-		{/if} -->
 	</div>
 </div>
 
@@ -124,13 +125,5 @@
 		width: 200px;
 		padding: 10px;
 		margin: 10px auto;
-	}
-
-	button {
-		all: unset;
-		color: white;
-		background: grey;
-		padding: 6px 12px;
-		cursor: pointer;
 	}
 </style>
