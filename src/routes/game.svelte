@@ -5,11 +5,13 @@
 	let timePassed = 0;
 	let stepsLeft = $game.numSteps;
 	let timeLimit = $game.timeLimit;
+	let job = $game.title;
+	let hardLimit = $game.hardLimit;
 
 	const wordBank = $game.isUberEats
 		? ['apple', 'coconut', 'banana', 'pineapple']
 		: ['red', 'green', 'yellow'];
-	let currentWord = 'apple';
+	let currentWord = wordBank[0];
 	let mistakes = 0;
 
 	let userInput = '';
@@ -32,7 +34,7 @@
 			userInput = '';
 			stepsLeft--;
 			if (stepsLeft > 0) {
-				currentWord = wordBank[stepsLeft % 4];
+				currentWord = wordBank[stepsLeft % wordBank.length];
 			}
 		} else {
 			status = 'Incorrect. Try again.';
@@ -47,18 +49,35 @@
 	}
 
 	function finish() {
-		console.log($history);
+		const penalty = timePassed > timeLimit ? Math.min(timePassed - timeLimit, $game.earnings) : 0;
 		history.update((list) => {
-			list.push(`finished: ${mistakes} mistakes in ${timePassed} s`);
+			list.push({
+            status: 'finished',
+            mistakes: mistakes,
+			earning: $game.earnings - penalty,
+            time: timePassed,
+        });
 			return list;
 		});
-		const penalty = timePassed > timeLimit ? Math.min(timePassed - timeLimit, $game.earnings) : 0;
+		console.log($history);
 		endGame($game.earnings - penalty);
+	}
+	
+	$: {
+  		if (stepsLeft <= 0) {
+			finish();
+		}
+
+  		if (timePassed >= hardLimit) {
+			// change
+			finish();
+		}
 	}
 </script>
 
 <div class="page">
 	<div class="game">
+		<h3>You are on {job} job</h3>
 		<h3 class:err={timePassed > timeLimit}>
 			Timer: {timeLimit - timePassed} (Debug time taken: {timePassed})
 		</h3>
@@ -69,9 +88,10 @@
 
 		<div class="status">{status}</div>
 
-		{#if stepsLeft <= 0}
+		<!-- {#if stepsLeft <= 0}
 			<button on:click={finish}>Return</button>
-		{/if}
+		
+		{/if} -->
 	</div>
 </div>
 
