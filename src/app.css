@@ -8,11 +8,11 @@ body {
 
 .choices {
 	position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 800px;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 800px;
 	height: 600px;
 	/* height: 100vh; */
 	display: flex;
@@ -23,16 +23,16 @@ body {
 .card {
 	flex-basis: calc(50% - 40px);
 	margin: 20px;
-	
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .card-content {
-    width: 300px;
-	height: 200px;
-    text-align: center;
+	width: 250px;
+	height: 250px;
+	text-align: center;
 }
 
 /* JOB READY ANIMATION */
@@ -49,8 +49,7 @@ body {
 	animation: jobanimate 0.5s infinite alternate;
 }
 .ready:hover {
-    cursor: pointer;
-
+	cursor: pointer;
 }
 
 /* HUD ** */
@@ -66,7 +65,6 @@ body {
 .err {
 	color: red;
 }
-
 
 /* * {
 	outline: 1px solid black;
