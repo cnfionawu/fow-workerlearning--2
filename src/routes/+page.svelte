@@ -7,7 +7,6 @@
 	import { elapsed, game, earned, history } from '$lib/stores.js';
 
 	const timeLimit = 30;
-
 	
 	$: inGame = $game.inGame;
 	$: timeUp = $elapsed > timeLimit;
@@ -23,17 +22,13 @@
 {/if}
 
 {#if inGame}
-
 	<Game />
 {:else if inSummary}
-
 	<Summary />
 {:else if timeUp}
 	<Final />
 {:else}
-
 	<Home />
-	
 {/if}
 
 <div>
