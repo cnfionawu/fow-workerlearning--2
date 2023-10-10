@@ -8,3 +8,14 @@
 	<Card title="Uber (SF)" waitTime={0} earnings={23} color="#96f0c8" />
 	<Card title="UberEats (SF)" waitTime={30} earnings={23} color="#89bbed" />
 </div>
+
+
+<!-- 
+	prepop:
+		* actual waitime 
+		* exp completion time
+		* task list based on how many stops/items 
+		* how much pay
+	
+
+ -->

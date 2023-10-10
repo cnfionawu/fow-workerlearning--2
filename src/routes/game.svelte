@@ -52,8 +52,9 @@
 			list.push(`finished: ${mistakes} mistakes in ${timePassed} s`);
 			return list;
 		});
-		const penalty = timePassed > timeLimit ? Math.min(timePassed - timeLimit, $game.earnings) : 0;
-		endGame($game.earnings - penalty);
+		// const penalty = timePassed > timeLimit ? Math.min(timePassed - timeLimit, $game.earnings) : 0;
+		// endGame($game.earnings - penalty);
+		endGame($game.earnings);
 	}
 </script>
 

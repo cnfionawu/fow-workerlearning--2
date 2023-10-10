@@ -31,7 +31,7 @@ export function endGame(gained) {
 export const time = readable(new Date(), function start(set) {
 	const interval = setInterval(() => {
 		set(new Date());
-	}, 1000);
+	}, 100);
 
 	return function stop() {
 		clearInterval(interval);
@@ -40,8 +40,5 @@ export const time = readable(new Date(), function start(set) {
 
 let start = new Date();
 
-export function resetTimer() {
-	start = new Date();
-}
-
-export const elapsed = derived(time, ($time) => Math.round(($time - start) / 1000));
+export const timeStamp = derived(time, ($time) => $time - start);
+export const elapsed = derived(time, ($time) => $time - start);
