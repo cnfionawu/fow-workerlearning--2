@@ -8,6 +8,8 @@
 	export let earnings;
 
 	let countdown = waitTime;
+	let numSteps = 5;
+	let hardLimit = 10;
 
 	onMount(() => {
 		setInterval(() => {
@@ -20,13 +22,14 @@
 	function start() {
 		if (ready) {
 			history.update((list) => {
-				list.push('start: ' + title);
+				// list.push('start: ' + title);
+				list.push({status: 'start', title: title,});
 				return list;
 			});
 			
-			const numSteps = 5, 
-				timeLimit = 20;
-			startGame(title, earnings, numSteps, timeLimit);
+			// numSteps = 5;
+			const timeLimit = 5;
+			startGame(title, earnings, numSteps, timeLimit, hardLimit);
 			console.log($history);
 		}
 	}
@@ -41,7 +44,12 @@
 		{#if !ready}
 			<h4>{countdown}</h4>
 		{:else}
-			Ready
+			Ready! 
+			{#if title.includes('UberEats')}
+				<p>There are {numSteps} items</p>
+  			{:else}
+    			<p>There are {numSteps} blocks</p>
+  			{/if}
 		{/if}
 
 		<p>Wait Time: {waitTime}s</p>

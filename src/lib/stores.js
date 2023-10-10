@@ -4,19 +4,24 @@ import { writable, readable, derived } from 'svelte/store';
 export const earned = writable(0);
 export const history = writable([]);
 export const game = writable({
-	inGame: false
+	inGame: false,
+	inSummary: false,
 });
 
-export function startGame(isUberEats, earnings, numSteps, timeLimit) {
+export function startGame(isUberEats, earnings, numSteps, timeLimit, hardLimit) {
 	console.log('Starting');
 
 	game.set({
 		inGame: true,
-		isUberEats: true,
+		title: isUberEats,
+		isUberEats: isUberEats.includes("UberEats"),
 		earnings: earnings,
 		numSteps: numSteps,
-		timeLimit: timeLimit
+		timeLimit: timeLimit,
+		hardLimit: hardLimit
 	});
+	console.log(isUberEats.includes("UberEats"));
+	
 }
 export function endGame(gained) {
 	console.log('Ending');
@@ -24,7 +29,8 @@ export function endGame(gained) {
 	earned.update((n) => n + gained );
 
 	game.set({
-		inGame: false
+		inGame: false,
+		inSummary: true
 	});
 }
 
