@@ -6,7 +6,7 @@
 	import Final from './final.svelte';
 	import { elapsed, game, earned, history, logHistory, resetTimer } from '$lib/stores.js';
 
-	const timeLimit = 300;
+	const timeLimit = 15;
 
 	$: inGame = $game.inGame;
 	$: timeUp = $elapsed > timeLimit;
@@ -19,6 +19,15 @@
 		resetTimer();
 		logHistory(`${userName} started a game`);
 	}
+
+	$: {
+        if (timeUp) {
+            const gameArrToSend = JSON.stringify($history);
+            console.log("Sending experiment result:", gameArrToSend);
+            console.log("Type of experiment result:", typeof gameArrToSend);
+            window.parent.postMessage({ type: 'gameArr', data: gameArrToSend }, '*');
+        }
+    }
 </script>
 
 {#if !timeUp && started}
