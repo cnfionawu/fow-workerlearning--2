@@ -8,7 +8,7 @@
 </script>
 
 <div>
-	<h1>You have finished the game</h1>
+	<h1>You have finished the game!</h1>
 </div>
 
 <style>
