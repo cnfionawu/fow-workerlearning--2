@@ -104,7 +104,7 @@
 
 <div class="page">
 	<div class="game">
-		<h3>You are on {job} job</h3>
+		<h3>{job}</h3>
 		<h3 class:err={timePassed > timeLimit}>
 			Timer: {timeLimit - timePassed} (Debug time taken: {timePassed})
 		</h3>

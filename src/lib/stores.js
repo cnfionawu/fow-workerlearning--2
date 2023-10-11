@@ -1,54 +1,5 @@
 // place files you want to import through the `$lib` alias in this folder.
 import { writable, readable, derived } from 'svelte/store';
-import {data} from '../data/data.js';
-
-// Data
-export function randomPick(list) {
-	const randomIndex = Math.floor(Math.random() * list.length);
-    return randomIndex;
-}
-const jobData = [
-	{ title: 'UberEats (Berkeley)'},
-	{ title: 'Uber (Berkeley)'},
-	{ title: 'Uber (SF)'},
-	{ title: 'UberEats (SF)'},
-  ];
-
-export function UpdateJobs(indices) {
-	const updatedJobData = [...jobData]; // Create a copy of the original jobData
-  
-	indices.forEach((index, i) => {
-		const curindex = [i, index];
-		let numtask = 0;
-		const [waittime, time] = data[i][index];
-		const timelimit = Math.round(time / 2);
-		const earning = time;
-		const hardlimit = time*2;
-		
-		if (i === 0 || i === 3) {
-			numtask = Math.round(timelimit / 3);
-		  } else {
-			numtask = Math.round(timelimit / 2);
-		  }
-		console.log(numtask);
-
-		updatedJobData[i] = {
-			...updatedJobData[i],
-			earning: earning,
-			timeLimit: timelimit,
-			numSteps: numtask,
-			waitTime: waittime,
-			hardLimit: hardlimit,
-			index: curindex
-		}
-	  
-
-	});
-  
-	return updatedJobData;
-  }
-
-
 
 /* Time Stamps & History */
 
@@ -124,4 +75,3 @@ export function endGame(gained, gameState) {
 }
 
 export const elapsed = derived(timeStamp, ($timeStamp) => Math.round($timeStamp / 1000));
-
