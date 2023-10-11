@@ -110,7 +110,8 @@
 	<div class="game">
 		<h3>{job}</h3>
 		<h3 class:err={timePassed > timeLimit}>
-			Timer: {timeLimit - timePassed} (Debug time taken: {timePassed})
+			Timer: {timeLimit - timePassed} 
+			<!-- (Debug time taken: {timePassed}) -->
 		</h3>
 		<p>Left: {stepsLeft}</p>
 

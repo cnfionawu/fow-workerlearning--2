@@ -65,7 +65,7 @@
 			<br />
 			<p>
 				<i>Not ready</i>
-				{countdown}
+				<!-- {countdown} -->
 			</p>
 			<!-- <h4>{countdown}</h4> -->
 		{:else}
