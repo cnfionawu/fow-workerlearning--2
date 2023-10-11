@@ -6,7 +6,7 @@
 	import Final from './final.svelte';
 	import { elapsed, game, earned, history, logHistory, resetTimer } from '$lib/stores.js';
 
-	const timeLimit = 15;
+	const timeLimit = 40;
 
 	$: inGame = $game.inGame;
 	$: timeUp = $elapsed > timeLimit;
