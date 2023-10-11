@@ -48,9 +48,9 @@
 		<div class="slider-label">{proficiencyText[0]}</div>
 		<input
 			type="range"
-			min="0"
-			max="1"
-			step="0.1"
+			min="-1"
+        	max="1"
+        	step="1" 
 			class="slider"
 			bind:value={rating}
 			on:input={storeRating}

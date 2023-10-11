@@ -2,7 +2,8 @@
 	import { onMount } from 'svelte';
 	import { startGame, logHistory } from '$lib/stores.js';
 
-	const SECONDS_PER_JOB = 4;
+	const SECONDS_PER_JOB_UBER = 2;
+	const SECONDS_PER_JOB_UBEREats = 3;
 
 	// export let title;
 	// export let waitTime;
@@ -12,7 +13,13 @@
 
 	const title = `${jobData.type} - ${jobData.city}`;
 	let countdown = jobData.waitTime;
-	let numSteps = Math.floor(jobData.timeLimit / SECONDS_PER_JOB);
+	let numSteps = jobData.timeLimit;
+	if (jobData.type == 'UberEats') {
+		numSteps = Math.floor(numSteps/SECONDS_PER_JOB_UBEREats);
+	} else {
+		numSteps = Math.floor(numSteps/SECONDS_PER_JOB_UBER);
+	}
+	// let numSteps = Math.floor(jobData.timeLimit / SECONDS_PER_JOB);
 	let earnings = jobData.timeLimit / 2;
 
 	onMount(() => {
@@ -26,9 +33,8 @@
 	function start() {
 		if (ready) {
 			// logHistory(`chose task ${title}`);
-
-			/* Shunan's number / 2 = soft deadline, Hard deadline = 2 x soft deadline */
-			startGame(title, earnings, numSteps, Math.round(jobData.timeLimit / 2), jobData.timeLimit);
+			let hardLimit = jobData.timeLimit * 2;
+			startGame(title, earnings, numSteps, jobData.timeLimit, hardLimit);
 		}
 	}
 </script>
@@ -39,8 +45,21 @@
 	<div class="card-content" class:ready style="background: {color};" on:click={start}>
 		<h2>{title}</h2>
 
-		<p>Wait Time: {jobData.waitTime}s</p>
-		<p>Earnings: ${earnings}</p>
+		<!-- <p>Wait Time: {jobData.waitTime}s</p>
+		<p>Earnings: ${earnings}</p> -->
+		<!-- only show avg wait time and earning -->
+		{#if title.includes('Berkeley')}
+			<p>Avg Wait Time: 15s</p>
+		{:else}
+			<p>Avg Wait Time: 20s</p>
+		{/if}
+
+		{#if title.includes('UberEats')}
+			<p>Avg Earnings: $40</p>
+		{:else}
+			<p>Avg Earnings: $20</p>
+
+		{/if}
 
 		{#if !ready}
 			<br />
