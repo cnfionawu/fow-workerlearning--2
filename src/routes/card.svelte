@@ -56,8 +56,10 @@
 
 		{#if title.includes('UberEats')}
 			<p>Avg Earnings: $40</p>
+			<p>Avg Number of Items: 13</p>
 		{:else}
 			<p>Avg Earnings: $20</p>
+			<p>Avg Number of Items: 10</p>
 
 		{/if}
 
