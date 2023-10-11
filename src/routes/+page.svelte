@@ -57,7 +57,7 @@
 {/if}
 
 
-<div>
+<!-- <div>
 	<i>history:</i>
 	{JSON.stringify($history)}
-</div>
+</div> -->

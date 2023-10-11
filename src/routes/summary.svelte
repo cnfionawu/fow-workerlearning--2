@@ -1,7 +1,6 @@
 <script>
 	import '../app.css';
 	import { history, game, logHistory } from '$lib/stores.js';
-    import { getContext } from 'svelte';
 
 	// console.log($game);
 
@@ -16,7 +15,7 @@
 
     /* reactive ui stuff */
 	const proficiencyText = ['Good', 'Bad'];
-	let rating = 0.5;
+	let rating = 0;
 
 	function returnHome() {
 		logHistory(`Rated themselves: ${rating}`);
