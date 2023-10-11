@@ -64,7 +64,7 @@
 		// const penalty = 0;
 		const earned = $game.earnings - penalty;
 		logHistory(
-			`finished with: ${mistakes} mistakes, ${earned} earned, ${timePassed} in game time passed`
+			`Ended with: ${mistakes} mistakes, ${earned} earned, ${timePassed} in game time passed`
 		);
 
 		const gameState = {};

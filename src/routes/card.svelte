@@ -3,18 +3,26 @@
 	import { startGame, logHistory, randomPick, UpdateJobs } from '$lib/stores.js';
 	import {data} from '../data/data.js';
 
-	export let title;
-	export let color;
-	export let waitTime;
-	export let earnings;
+	const SECONDS_PER_JOB = 4;
+	const MONEY_PER_JOB = 2;
 
 	const index = data.map(list => randomPick(list));
 	const jobs = UpdateJobs(index);
 	console.log(jobs);
 
-	let countdown = waitTime;
+	// let countdown = waitTime;
 	let numSteps;
 	let hardLimit;
+	// export let title;
+	// export let waitTime;
+	// export let earnings;
+	export let jobData;
+	export let color;
+
+	const title = `${jobData.type} - ${jobData.city}`;
+	let countdown = jobData.waitTime;
+	// let numSteps = Math.floor(jobData.timeLimit / SECONDS_PER_JOB);
+	// let earnings = numSteps * MONEY_PER_JOB;
 
 	onMount(() => {
 		setInterval(() => {
@@ -35,6 +43,10 @@
 			hardLimit = job.hardLimit;
 			logHistory(`chose task ${title}`);
 			startGame(title, earnings, numSteps, timeLimit, hardLimit);
+			// logHistory(`chose task ${title}`);
+			// let hardLimit = jobData.timeLimit * 2;
+
+			// startGame(title, earnings, numSteps, jobData.timeLimit, hardLimit);
 		}
 	}
 </script>
@@ -60,12 +72,18 @@
 		
 		{/if}
 		
+		<p>Wait Time: {jobData.waitTime}s</p>
+		<!-- <p>Earnings: ${earnings}</p> -->
 
 		{#if !ready}
 			<br />
-			<h4>{countdown}</h4>
+			<p>
+				<i>Not ready</i>
+				{countdown}
+			</p>
+			<!-- <h4>{countdown}</h4> -->
 		{:else}
-			{#if title.includes('UberEats')}
+			{#if jobData.type === 'UberEats'}
 				<p>There are {numSteps} items</p>
 			{:else}
 				<p>There are {numSteps} blocks</p>
