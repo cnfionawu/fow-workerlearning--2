@@ -59,7 +59,7 @@
 			<p>Avg Number of Items: 13</p>
 		{:else}
 			<p>Avg Earnings: $20</p>
-			<p>Avg Number of Items: 10</p>
+			<p>Avg Number of Blocks: 10</p>
 
 		{/if}
 
