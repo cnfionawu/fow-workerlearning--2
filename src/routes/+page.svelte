@@ -58,6 +58,6 @@
 
 
 <div>
-	<!-- <i>history:</i>
-	{JSON.stringify($history)} -->
+	<i>history:</i>
+	{JSON.stringify($history)}
 </div>

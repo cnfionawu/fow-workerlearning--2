@@ -49,7 +49,7 @@
 				currentWord = wordBank[stepsLeft % wordBank.length];
 			}
 		} else {
-			logHistory(`(${stepsLeft}) Inorrect Guess: ${currentWord}, mistyped ${userAnswer}`);
+			logHistory(`(${stepsLeft}) Incorrect Guess: ${currentWord}, mistyped ${userAnswer}`);
 			status = 'Incorrect. Try again.';
 			mistakes++;
 		}
