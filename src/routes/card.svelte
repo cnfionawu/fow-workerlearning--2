@@ -3,7 +3,6 @@
 	import { startGame, logHistory } from '$lib/stores.js';
 
 	const SECONDS_PER_JOB = 4;
-	const MONEY_PER_JOB = 0.5;
 
 	// export let title;
 	// export let waitTime;
@@ -14,7 +13,7 @@
 	const title = `${jobData.type} - ${jobData.city}`;
 	let countdown = jobData.waitTime;
 	let numSteps = Math.floor(jobData.timeLimit / SECONDS_PER_JOB);
-	let earnings = numSteps * MONEY_PER_JOB;
+	let earnings = jobData.timeLimit / 2;
 
 	onMount(() => {
 		setInterval(() => {
@@ -29,7 +28,7 @@
 			// logHistory(`chose task ${title}`);
 
 			/* Shunan's number / 2 = soft deadline, Hard deadline = 2 x soft deadline */
-			startGame(title, earnings, numSteps, jobData.timeLimit / 2, jobData.timeLimit);
+			startGame(title, earnings, numSteps, Math.round(jobData.timeLimit / 2), jobData.timeLimit);
 		}
 	}
 </script>

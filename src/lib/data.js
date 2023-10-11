@@ -20008,9 +20008,3 @@ export const data = [
 		[7, 17]
 	]
 ];
-
-// const data_lens = [0,0,0,0];
-
-// for (let i = 0; i < 4; i++) {
-//     data_lens[i] = data[i].len
-// }

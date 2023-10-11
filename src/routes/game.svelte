@@ -3,7 +3,7 @@
 	import { onMount, setContext } from 'svelte';
 
 	/* GAME STATE */
-	let timePassed = 0;
+	let timePassed = 0.0;
 	let stepsLeft = $game.numSteps;
 	let timeLimit = $game.timeLimit;
 	let job = $game.title;
@@ -19,6 +19,10 @@
 	/* User Input (reactive ui elem) */
 	let userInput = '';
 	let status = 'type!';
+
+	function round(value, decimals) {
+		return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+	}
 
 	/* Start Timer */
 	onMount(() => {
@@ -37,7 +41,7 @@
 		const userAnswer = userInput.toLowerCase();
 
 		if (userAnswer === currentWord) {
-			logHistory(`Correct Guess: ${currentWord}`);
+			logHistory(`(${stepsLeft}) Correct Guess: ${currentWord}`);
 			status = 'Correct!';
 			userInput = '';
 			stepsLeft--;
@@ -45,7 +49,7 @@
 				currentWord = wordBank[stepsLeft % wordBank.length];
 			}
 		} else {
-			logHistory(`Inorrect Guess: ${currentWord}`);
+			logHistory(`(${stepsLeft}) Inorrect Guess: ${currentWord}, mistyped ${userAnswer}`);
 			status = 'Incorrect. Try again.';
 			mistakes++;
 		}
