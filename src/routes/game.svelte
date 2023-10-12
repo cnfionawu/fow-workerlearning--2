@@ -79,7 +79,10 @@
 		// const penalty = 0;
 		penalty = timePassed > timeLimit ? Math.min(timePassed - timeLimit, $game.earnings) : 0;
 		if (timePassed < hardLimit) {
+			console.log("time pass" + timePassed)
 			earned = $game.earnings - penalty;
+		} else {
+			earned = 0;
 		}
 		
 		console.log(earned);
