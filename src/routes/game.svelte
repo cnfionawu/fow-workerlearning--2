@@ -8,7 +8,8 @@
 	let timeLimit = $game.timeLimit;
 	let job = $game.title;
 	let hardLimit = $game.hardLimit;
-	let seed = $game.timeLimit;
+	let earned = 0;
+	let penalty = 0;
 
 	/* WORD LIST */
 	// function pickRandomWord(wordBank, seed) {
@@ -75,9 +76,13 @@
 	// const lastEntry = $history[$history.length - 1];
 
 	function finish() {
-		const penalty = timePassed > timeLimit ? Math.min(timePassed - timeLimit, $game.earnings) : 0;
 		// const penalty = 0;
-		const earned = $game.earnings - penalty;
+		penalty = timePassed > timeLimit ? Math.min(timePassed - timeLimit, $game.earnings) : 0;
+		if (timePassed < hardLimit) {
+			earned = $game.earnings - penalty;
+		}
+		
+		console.log(earned);
 		logHistory(
 			`Ended with: ${mistakes} mistakes, ${earned} earned, ${timePassed} in game time passed`
 		);
