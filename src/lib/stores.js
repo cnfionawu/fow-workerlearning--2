@@ -40,6 +40,8 @@ export function logHistory(message) {
 /* Game State */
 
 export const earned = writable(0);
+export const currLocation = writable('Berkeley');
+
 export const game = writable({
 	inGame: false,
 	inSummary: false

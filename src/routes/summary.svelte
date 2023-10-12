@@ -4,7 +4,7 @@
 
 	// console.log($game);
 
-    /* previous game */
+	/* previous game */
 	// const prevGameState = $history[$history.length - 1];
 	const prevGameState = $game;
 	let job = prevGameState.title;
@@ -13,7 +13,7 @@
 	let earning = prevGameState.earning;
 	let hardLimit = prevGameState.hardLimit;
 
-    /* reactive ui stuff */
+	/* reactive ui stuff */
 	const proficiencyText = ['Good', 'Bad'];
 	let rating = 0;
 
@@ -44,17 +44,17 @@
 	<!-- slider -->
 	<h4>Rate your proficiency on this job:</h4>
 	<div class="slider-container">
-		<div class="slider-label">{proficiencyText[0]}</div>
+		<div class="slider-label">{proficiencyText[1]}</div>
 		<input
 			type="range"
 			min="-1"
-        	max="1"
-        	step="1" 
+			max="1"
+			step="1"
 			class="slider"
 			bind:value={rating}
 			on:input={storeRating}
 		/>
-		<div class="slider-label">{proficiencyText[1]}</div>
+		<div class="slider-label">{proficiencyText[0]}</div>
 	</div>
 
 	<button on:click={returnHome}>Return</button>

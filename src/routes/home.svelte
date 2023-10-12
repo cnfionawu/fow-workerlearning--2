@@ -6,10 +6,46 @@
 
 	// adjust correspondance to data's job, store
 	let jobs = [
-		{ waitTime: null, timeLimit: null, city: 'Berkeley', type: 'UberEats', index: null },
-		{ waitTime: null, timeLimit: null, city: 'Berkeley', type: 'Uber', index: null },
-		{ waitTime: null, timeLimit: null, city: 'SF', type: 'UberEats', index: null },
-		{ waitTime: null, timeLimit: null, city: 'SF', type: 'Uber', index: null }
+		{
+			waitTime: null,
+			timeLimit: null,
+			type: 'UberEats',
+			city: 'SF',
+			index: null,
+			avgWait: 15,
+			avgEarnings: 40,
+			avgItems: 13
+		},
+		{
+			waitTime: null,
+			timeLimit: null,
+			type: 'Uber',
+			city: 'SF',
+			index: null,
+			avgWait: 5,
+			avgEarnings: 20,
+			avgItems: 10
+		},
+		{
+			waitTime: null,
+			timeLimit: null,
+			type: 'UberEats',
+			city: 'Berkeley',
+			index: null,
+			avgWait: 20,
+			avgEarnings: 40,
+			avgItems: 13
+		},
+		{
+			waitTime: null,
+			timeLimit: null,
+			type: 'Uber',
+			city: 'Berkeley',
+			index: null,
+			avgWait: 10,
+			avgEarnings: 20,
+			avgItems: 10
+		}
 	];
 
 	function generateData() {
@@ -27,7 +63,8 @@
 
 	onMount(() => {
 		const jobStrings = jobs.map(
-			(job) => `${job.type} - ${job.city}: ${job.waitTime} waitTime, ${job.timeLimit} timeLimit`
+			(job) =>
+				`i:(${job.index}) ${job.type} - ${job.city}: ${job.waitTime} waitTime, ${job.timeLimit} timeLimit`
 		);
 		logHistory(`Entered home screen, displayed jobs: ${JSON.stringify(jobStrings)}`);
 		generateData();
@@ -35,8 +72,8 @@
 </script>
 
 <div class="choices">
-	<Card jobData={jobs[1]} color="#ecb98d" />
-	<Card jobData={jobs[0]} color="#eea7cf" />
-	<Card jobData={jobs[3]} color="#96f0c8" />
-	<Card jobData={jobs[2]} color="#89bbed" />
+	<Card jobData={jobs[3]} color="#ecb98d" />
+	<Card jobData={jobs[2]} color="#eea7cf" />
+	<Card jobData={jobs[1]} color="#96f0c8" />
+	<Card jobData={jobs[0]} color="#89bbed" />
 </div>

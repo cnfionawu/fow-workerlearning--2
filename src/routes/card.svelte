@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { startGame, logHistory } from '$lib/stores.js';
+	import { startGame, logHistory, currLocation } from '$lib/stores.js';
 
 	const SECONDS_PER_JOB_UBER = 2;
 	const SECONDS_PER_JOB_UBEREats = 3;
@@ -14,10 +14,14 @@
 	const title = `${jobData.type} - ${jobData.city}`;
 	let countdown = jobData.waitTime;
 	let numSteps = jobData.timeLimit;
+	let avgWait = jobData.avgWait;
+	let avgEarnings = jobData.avgEarnings;
+	let avgItems = jobData.avgItems;
+
 	if (jobData.type == 'UberEats') {
-		numSteps = Math.floor(numSteps/SECONDS_PER_JOB_UBEREats);
+		numSteps = Math.floor(numSteps / SECONDS_PER_JOB_UBEREats);
 	} else {
-		numSteps = Math.floor(numSteps/SECONDS_PER_JOB_UBER);
+		numSteps = Math.floor(numSteps / SECONDS_PER_JOB_UBER);
 	}
 	// let numSteps = Math.floor(jobData.timeLimit / SECONDS_PER_JOB);
 	let earnings = jobData.timeLimit / 2;
@@ -29,11 +33,28 @@
 	});
 
 	$: ready = countdown <= 0;
+	$: {
+		if (ready) {
+			logHistory(`i:(${jobData.index}) Job ${title} now avaliable`);
+		}
+	}
 
 	function start() {
+		// console.log('DEBUG:', countdown, countdown <= 0);
 		if (ready) {
 			// logHistory(`chose task ${title}`);
 			let hardLimit = jobData.timeLimit * 2;
+
+			if ($currLocation !== jobData.city) {
+				currLocation.set('');
+				// wait for 5 sec
+				setTimeout(() => {
+					currLocation.set(jobData.city);
+				}, 5000);
+
+				startGame(title, earnings, numSteps, jobData.timeLimit + 5, hardLimit);
+			}
+
 			startGame(title, earnings, numSteps, jobData.timeLimit, hardLimit);
 		}
 	}
@@ -48,20 +69,12 @@
 		<!-- <p>Wait Time: {jobData.waitTime}s</p>
 		<p>Earnings: ${earnings}</p> -->
 		<!-- only show avg wait time and earning -->
-		{#if title.includes('Berkeley')}
-			<p>Avg Wait Time: 15s</p>
-		{:else}
-			<p>Avg Wait Time: 20s</p>
-		{/if}
 
-		{#if title.includes('UberEats')}
-			<p>Avg Earnings: $40</p>
-			<p>Avg Number of Items: 13</p>
-		{:else}
-			<p>Avg Earnings: $20</p>
-			<p>Avg Number of Blocks: 10</p>
-
-		{/if}
+		<i>
+			<p>Avg Wait Time: {avgWait}</p>
+			<p>Avg Earnings: ${avgEarnings}</p>
+			<p>Avg Number of Items: {avgItems}</p>
+		</i>
 
 		{#if !ready}
 			<br />

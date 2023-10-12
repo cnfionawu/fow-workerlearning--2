@@ -1,6 +1,6 @@
 <script>
 	import { game, endGame, logHistory } from '$lib/stores.js';
-	import { onMount, setContext } from 'svelte';
+	import { onMount } from 'svelte';
 
 	/* GAME STATE */
 	let timePassed = 0.0;
@@ -8,12 +8,22 @@
 	let timeLimit = $game.timeLimit;
 	let job = $game.title;
 	let hardLimit = $game.hardLimit;
+	let seed = $game.timeLimit;
 
 	/* WORD LIST */
+	// function pickRandomWord(wordBank, seed) {
+	// 	const randomIndex = seededRandom(seed, 0, wordBank.length - 1);
+	// 	return wordBank[randomIndex];
+	// }
+	function pickWord(wordBank) {
+		const randI = Math.floor(Math.random(wordBank.length) * wordBank.length);
+		return wordBank[randI];
+	}
 	const wordBank = $game.isUberEats
 		? ['apple', 'coconut', 'banana', 'pineapple']
 		: ['red', 'green', 'yellow'];
-	let currentWord = wordBank[stepsLeft % wordBank.length];
+	// let currentWord = wordBank[stepsLeft % wordBank.length];
+	let currentWord = pickWord(wordBank);
 	let mistakes = 0;
 
 	/* User Input (reactive ui elem) */
@@ -46,7 +56,8 @@
 			userInput = '';
 			stepsLeft--;
 			if (stepsLeft > 0) {
-				currentWord = wordBank[stepsLeft % wordBank.length];
+				// currentWord = wordBank[stepsLeft % wordBank.length];
+				currentWord = pickWord(wordBank);
 			}
 		} else {
 			logHistory(`(${stepsLeft}) Incorrect Guess: ${currentWord}, mistyped ${userAnswer}`);
@@ -110,7 +121,7 @@
 	<div class="game">
 		<h3>{job}</h3>
 		<h3 class:err={timePassed > timeLimit}>
-			Timer: {timeLimit - timePassed} 
+			Timer: {timeLimit - timePassed}
 			<!-- (Debug time taken: {timePassed}) -->
 		</h3>
 		<p>Left: {stepsLeft}</p>
