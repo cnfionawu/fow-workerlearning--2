@@ -14,7 +14,7 @@
 		currLocation
 	} from '$lib/stores.js';
 
-	const timeLimit = 20;
+	const timeLimit = 1200;
 
 	$: inGame = $game.inGame;
 	$: timeUp = $elapsed > timeLimit;
