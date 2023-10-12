@@ -17,14 +17,18 @@
 	let avgWait = jobData.avgWait;
 	let avgEarnings = jobData.avgEarnings;
 	let avgItems = jobData.avgItems;
+	let timeLimit = jobData.timeLimit;
 
 	if (jobData.type == 'UberEats') {
-		numSteps = Math.floor(numSteps / SECONDS_PER_JOB_UBEREats);
+			numSteps = Math.floor(numSteps / SECONDS_PER_JOB_UBEREats);
 	} else {
+		console.log(numSteps);
 		numSteps = Math.floor(numSteps / SECONDS_PER_JOB_UBER);
+		console.log(numSteps);
 	}
+	
 	// let numSteps = Math.floor(jobData.timeLimit / SECONDS_PER_JOB);
-	let earnings = jobData.timeLimit / 2;
+	let earnings = jobData.timeLimit;
 
 	onMount(() => {
 		setInterval(() => {
@@ -51,11 +55,9 @@
 				setTimeout(() => {
 					currLocation.set(jobData.city);
 				}, 5000);
-
-				startGame(title, earnings, numSteps, jobData.timeLimit + 5, hardLimit);
+				startGame(title, earnings, numSteps, timeLimit, hardLimit);
 			}
-
-			startGame(title, earnings, numSteps, jobData.timeLimit, hardLimit);
+			startGame(title, earnings, numSteps, timeLimit, hardLimit);
 		}
 	}
 </script>
