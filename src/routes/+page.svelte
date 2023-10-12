@@ -14,7 +14,7 @@
 		currLocation
 	} from '$lib/stores.js';
 
-	const timeLimit = 1200;
+	const timeLimit = 20;
 
 	$: inGame = $game.inGame;
 	$: timeUp = $elapsed > timeLimit;
@@ -67,7 +67,7 @@
 {/if}
 
 {#if $currLocation === ''}
-<div class="traveling">Travling ...</div>
+<div class="traveling">Traveling ...</div>
 {/if}
 
 <!-- <div>
