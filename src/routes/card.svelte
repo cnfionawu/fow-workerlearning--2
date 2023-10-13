@@ -39,7 +39,7 @@
 	$: ready = countdown <= 0;
 	$: {
 		if (ready) {
-			logHistory(`i:(${jobData.index}) Job ${title} now avaliable`);
+			logHistory(`i:(${jobData.index}) Job ${title} now available`);
 		}
 	}
 

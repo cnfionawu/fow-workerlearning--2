@@ -9,7 +9,8 @@
 
 <div class="container">
     <h1>You have finished the game!</h1>
-    <h4>Please copy this:</h4>
+	<h4>Please copy this and email to <a href="mailto:bobalab@berkeley.edu">bobalab@berkeley.edu</a>:</h4>
+    <!-- <h4>Please copy this and email to bobalab@berkeley.edu:</h4> -->
 </div>
 <div class="content">
     <p>{JSON.stringify($history)}</p>
@@ -24,7 +25,7 @@
         height: 50vh; /* Set the height to 50% of the viewport height */
     }
 
-    h1, h3 {
+    h1{
         font-size: 24px;
         text-align: center;
         margin: 0;

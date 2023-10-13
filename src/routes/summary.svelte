@@ -14,7 +14,7 @@
 	let hardLimit = prevGameState.hardLimit;
 
 	/* reactive ui stuff */
-	const proficiencyText = ['Good', 'Bad'];
+	const proficiencyText = ['Very Good', 'Very Bad'];
 	let rating = 0;
 
 	function returnHome() {
@@ -42,7 +42,7 @@
 	<p>You earned ${earning}</p>
 
 	<!-- slider -->
-	<h4>Rate your proficiency on this job:</h4>
+	<!-- <h4>Rate your proficiency on this job:</h4>
 	<div class="slider-container">
 		<div class="slider-label">{proficiencyText[1]}</div>
 		<input
@@ -55,7 +55,42 @@
 			on:input={storeRating}
 		/>
 		<div class="slider-label">{proficiencyText[0]}</div>
+	</div> -->
+	<h4>Rate your proficiency on this job:</h4>
+	<div class="radio-container">
+		<div class="slider-label">{proficiencyText[0]}</div>
+		<label class="radio-label">
+			<input type="radio" bind:group={rating} value="3" />
+			<span class="radio-text">3</span>
+		</label>
+		<label class="radio-label">
+			<input type="radio" bind:group={rating} value="2" />
+			<span class="radio-text">2</span>
+		</label>
+		<label class="radio-label">
+			<input type="radio" bind:group={rating} value="1" />
+			<span class="radio-text">1</span>
+		</label>
+		<label class="radio-label">
+			<input type="radio" bind:group={rating} value="0" />
+			<span class="radio-text">0</span>
+		</label>
+		<label class="radio-label">
+			<input type="radio" bind:group={rating} value="-1" />
+			<span class="radio-text">-1</span>
+		</label>
+		<label class="radio-label">
+			<input type="radio" bind:group={rating} value="-2" />
+			<span class="radio-text">-2</span>
+		</label>
+		<label class="radio-label">
+			<input type="radio" bind:group={rating} value="-3" />
+			<span class="radio-text">-3</span>
+		</label>
+		<div class="slider-label">{proficiencyText[1]}</div>
 	</div>
+	
+
 
 	<button on:click={returnHome}>Return</button>
 </div>
@@ -89,7 +124,7 @@
 		margin: 5px 0;
 	}
 
-	.slider-container {
+	/* .slider-container {
 		display: flex;
 		align-items: center;
 	}
@@ -101,5 +136,25 @@
 
 	.slider-label {
 		font-size: 16px;
+	} */
+	.radio-container {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: 50%; 
+    margin: 0 auto; 
 	}
+
+
+	.radio-label {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+	}
+
+	.radio-text {
+		margin-left: 5px; 
+	}
+
+
 </style>
