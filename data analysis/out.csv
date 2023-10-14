@@ -1,0 +1,563 @@
+time,event
+0,Yizhen started a game with 1200 timeLimit
+0,"Entered home screen, displayed jobs: [""i:(0,2214) UberEats - SF: 24 waitTime, 51 timeLimit"",""i:(1,3039) Uber - SF: 3 waitTime, 19 timeLimit"",""i:(2,506) UberEats - Berkeley: 39 waitTime, 39 timeLimit"",""i:(3,2711) Uber - Berkeley: 5 waitTime, 14 timeLimit""]"
+3.011,"i:(1,1608) Job Uber - SF now available"
+5.003,"i:(3,1467) Job Uber - Berkeley now available"
+9.072,"Task Uber - SF was started with: 9 steps, 19 timeLimit, 30 hardLimit"
+12.143,(9) Correct Guess: green
+13.973,(8) Correct Guess: green
+15.403,(7) Correct Guess: red
+16.293,(6) Correct Guess: red
+18.013,(5) Correct Guess: green
+19.943,(4) Correct Guess: yellow
+21.193,(3) Correct Guess: red
+22.333,(2) Correct Guess: red
+23.923,(1) Correct Guess: green
+23.923,"Ended with: 0 mistakes, 19 earned, 14 in game time passed"
+28.993,Rated themselves: 3
+28.993,"i:(1,1276) Job Uber - SF now available"
+28.993,"Entered home screen, displayed jobs: [""i:(0,565) UberEats - SF: 38 waitTime, 41 timeLimit"",""i:(1,1276) Uber - SF: 0 waitTime, 31 timeLimit"",""i:(2,3083) UberEats - Berkeley: 5 waitTime, 26 timeLimit"",""i:(3,2154) Uber - Berkeley: 2 waitTime, 29 timeLimit""]"
+28.993,"i:(1,3462) Job Uber - SF now available"
+31.003,"i:(3,1958) Job Uber - Berkeley now available"
+32.043,"Task Uber - SF was started with: 15 steps, 31 timeLimit, 46 hardLimit"
+36.163,(15) Correct Guess: green
+37.683,(14) Correct Guess: red
+39.033,(13) Correct Guess: green
+40.153,(12) Correct Guess: green
+41.184,(11) Correct Guess: green
+42.233,(10) Correct Guess: green
+43.203,(9) Correct Guess: red
+44.683,(8) Correct Guess: green
+45.713,(7) Correct Guess: red
+47.184,(6) Correct Guess: yellow
+48.393,(5) Correct Guess: green
+50.373,(4) Correct Guess: yellow
+51.534,(3) Correct Guess: green
+53.542,(2) Correct Guess: yellow
+55.813,(1) Correct Guess: yellow
+55.813,"Ended with: 0 mistakes, 31 earned, 23 in game time passed"
+58.693,Rated themselves: 3
+58.693,"Entered home screen, displayed jobs: [""i:(0,236) UberEats - SF: 7 waitTime, 30 timeLimit"",""i:(1,4560) Uber - SF: 1 waitTime, 25 timeLimit"",""i:(2,898) UberEats - Berkeley: 10 waitTime, 37 timeLimit"",""i:(3,3544) Uber - Berkeley: 5 waitTime, 20 timeLimit""]"
+59.702,"i:(1,437) Job Uber - SF now available"
+63.703,"i:(3,4512) Job Uber - Berkeley now available"
+65.702,"i:(0,2874) Job UberEats - SF now available"
+67.273,"Task UberEats - SF was started with: 10 steps, 30 timeLimit, 58 hardLimit"
+72.783,"(10) Incorrect Guess: coconut, mistyped pear"
+76.593,(10) Correct Guess: coconut
+78.403,(9) Correct Guess: banana
+79.853,(8) Correct Guess: apple
+83.213,(7) Correct Guess: pineapple
+86.133,(6) Correct Guess: coconut
+88.273,(5) Correct Guess: pineapple
+89.903,(4) Correct Guess: banana
+92.083,(3) Correct Guess: coconut
+94.473,(2) Correct Guess: pineapple
+95.873,(1) Correct Guess: apple
+95.873,"Ended with: 1 mistakes, 30 earned, 28 in game time passed"
+98.973,Rated themselves: 1
+98.973,"Entered home screen, displayed jobs: [""i:(0,533) UberEats - SF: 4 waitTime, 16 timeLimit"",""i:(1,3627) Uber - SF: 6 waitTime, 13 timeLimit"",""i:(2,3949) UberEats - Berkeley: 19 waitTime, 32 timeLimit"",""i:(3,3640) Uber - Berkeley: 23 waitTime, 28 timeLimit""]"
+102.983,"i:(0,1475) Job UberEats - SF now available"
+104.122,"Task UberEats - SF was started with: 5 steps, 16 timeLimit, 84 hardLimit"
+107.343,(5) Correct Guess: pineapple
+109.163,(4) Correct Guess: coconut
+110.433,(3) Correct Guess: banana
+112.143,(2) Correct Guess: coconut
+113.473,(1) Correct Guess: apple
+113.473,"Ended with: 0 mistakes, 16 earned, 9 in game time passed"
+116.143,Rated themselves: 3
+116.143,"i:(1,2221) Job Uber - SF now available"
+116.143,"Entered home screen, displayed jobs: [""i:(0,1781) UberEats - SF: 11 waitTime, 51 timeLimit"",""i:(1,2221) Uber - SF: 0 waitTime, 24 timeLimit"",""i:(2,3627) UberEats - Berkeley: 1 waitTime, 33 timeLimit"",""i:(3,2871) Uber - Berkeley: 4 waitTime, 15 timeLimit""]"
+116.143,"i:(1,943) Job Uber - SF now available"
+116.973,"Task Uber - SF was started with: 12 steps, 24 timeLimit, 20 hardLimit"
+119.203,(12) Correct Guess: green
+120.453,(11) Correct Guess: green
+121.683,(10) Correct Guess: red
+122.453,(9) Correct Guess: red
+123.373,(8) Correct Guess: red
+124.303,(7) Correct Guess: red
+125.133,(6) Correct Guess: red
+126.863,(5) Correct Guess: green
+127.883,(4) Correct Guess: red
+129.283,(3) Correct Guess: green
+130.093,(2) Correct Guess: red
+130.903,(1) Correct Guess: red
+130.903,"Ended with: 0 mistakes, 24 earned, 13 in game time passed"
+133.373,Rated themselves: 3
+133.373,"i:(3,2017) Job Uber - Berkeley now available"
+133.373,"Entered home screen, displayed jobs: [""i:(0,4296) UberEats - SF: 11 waitTime, 36 timeLimit"",""i:(1,494) Uber - SF: 2 waitTime, 15 timeLimit"",""i:(2,2003) UberEats - Berkeley: 5 waitTime, 33 timeLimit"",""i:(3,2017) Uber - Berkeley: 0 waitTime, 16 timeLimit""]"
+133.373,"i:(3,3112) Job Uber - Berkeley now available"
+135.392,"i:(1,2720) Job Uber - SF now available"
+138.382,"i:(2,3215) Job UberEats - Berkeley now available"
+139.232,"Task Uber - Berkeley was started with: 8 steps, 16 timeLimit, 28 hardLimit"
+143.892,(8) Correct Guess: green
+145.133,(7) Correct Guess: green
+146.893,(6) Correct Guess: yellow
+147.953,(5) Correct Guess: red
+149.573,(4) Correct Guess: yellow
+151.483,(3) Correct Guess: yellow
+152.413,(2) Correct Guess: red
+154.353,(1) Correct Guess: yellow
+154.353,"Ended with: 0 mistakes, 16 earned, 15 in game time passed"
+157.723,Rated themselves: 2
+157.723,"Entered home screen, displayed jobs: [""i:(0,3543) UberEats - SF: 23 waitTime, 46 timeLimit"",""i:(1,4393) Uber - SF: 4 waitTime, 27 timeLimit"",""i:(2,1352) UberEats - Berkeley: 8 waitTime, 56 timeLimit"",""i:(3,1720) Uber - Berkeley: 18 waitTime, 24 timeLimit""]"
+161.733,"i:(1,221) Job Uber - SF now available"
+165.733,"i:(2,3084) Job UberEats - Berkeley now available"
+167.003,"Task UberEats - Berkeley was started with: 18 steps, 56 timeLimit, 58 hardLimit"
+169.693,(18) Correct Guess: apple
+170.833,(17) Correct Guess: apple
+171.853,(16) Correct Guess: apple
+174.243,(15) Correct Guess: banana
+175.453,(14) Correct Guess: apple
+176.553,(13) Correct Guess: apple
+177.983,(12) Correct Guess: banana
+180.133,(11) Correct Guess: pineapple
+181.793,(10) Correct Guess: coconut
+183.193,(9) Correct Guess: apple
+185.583,(8) Correct Guess: pineapple
+187.043,(7) Correct Guess: apple
+188.343,(6) Correct Guess: banana
+189.653,(5) Correct Guess: apple
+191.933,(4) Correct Guess: pineapple
+193.673,(3) Correct Guess: coconut
+194.813,(2) Correct Guess: apple
+196.423,(1) Correct Guess: coconut
+196.423,"Ended with: 0 mistakes, 56 earned, 29 in game time passed"
+199.413,Rated themselves: 3
+199.413,"Entered home screen, displayed jobs: [""i:(0,720) UberEats - SF: 20 waitTime, 21 timeLimit"",""i:(1,4953) Uber - SF: 25 waitTime, 22 timeLimit"",""i:(2,1957) UberEats - Berkeley: 126 waitTime, 40 timeLimit"",""i:(3,4329) Uber - Berkeley: 1 waitTime, 14 timeLimit""]"
+200.422,"i:(3,425) Job Uber - Berkeley now available"
+219.422,"i:(0,4493) Job UberEats - SF now available"
+224.422,"i:(1,3067) Job Uber - SF now available"
+225.253,"Task UberEats - SF was started with: 7 steps, 21 timeLimit, 62 hardLimit"
+227.623,(7) Correct Guess: banana
+228.793,(6) Correct Guess: banana
+232.053,(5) Correct Guess: pineapple
+233.363,(4) Correct Guess: apple
+235.513,(3) Correct Guess: pineapple
+237.383,(2) Correct Guess: coconut
+238.813,(1) Correct Guess: coconut
+238.813,"Ended with: 0 mistakes, 21 earned, 13 in game time passed"
+241.353,Rated themselves: 3
+241.353,"Entered home screen, displayed jobs: [""i:(0,1561) UberEats - SF: 17 waitTime, 39 timeLimit"",""i:(1,4115) Uber - SF: 2 waitTime, 10 timeLimit"",""i:(2,1357) UberEats - Berkeley: 9 waitTime, 45 timeLimit"",""i:(3,1756) Uber - Berkeley: 45 waitTime, 22 timeLimit""]"
+243.372,"i:(1,2424) Job Uber - SF now available"
+250.373,"i:(2,4047) Job UberEats - Berkeley now available"
+256.172,"Task UberEats - Berkeley was started with: 15 steps, 45 timeLimit, 84 hardLimit"
+259.523,(15) Correct Guess: apple
+261.533,(14) Correct Guess: coconut
+262.933,(13) Correct Guess: banana
+264.193,(12) Correct Guess: banana
+265.643,(11) Correct Guess: coconut
+267.353,(10) Correct Guess: coconut
+269.353,(9) Correct Guess: pineapple
+270.663,(8) Correct Guess: banana
+272.483,(7) Correct Guess: pineapple
+273.963,(6) Correct Guess: apple
+275.214,(5) Correct Guess: banana
+277.033,(4) Correct Guess: pineapple
+279.483,(3) Correct Guess: pineapple
+280.943,(2) Correct Guess: coconut
+282.833,(1) Correct Guess: pineapple
+282.833,"Ended with: 0 mistakes, 45 earned, 26 in game time passed"
+285.473,Rated themselves: 3
+285.473,"Entered home screen, displayed jobs: [""i:(0,1098) UberEats - SF: 14 waitTime, 51 timeLimit"",""i:(1,2433) Uber - SF: 23 waitTime, 18 timeLimit"",""i:(2,2425) UberEats - Berkeley: 28 waitTime, 54 timeLimit"",""i:(3,2345) Uber - Berkeley: 2 waitTime, 21 timeLimit""]"
+287.483,"i:(3,448) Job Uber - Berkeley now available"
+288.263,"Task Uber - Berkeley was started with: 10 steps, 21 timeLimit, 50 hardLimit"
+290.123,(10) Correct Guess: red
+291.113,(9) Correct Guess: red
+292.013,(8) Correct Guess: red
+292.763,(7) Correct Guess: red
+294.543,(6) Correct Guess: yellow
+296.003,(5) Correct Guess: yellow
+297.533,(4) Correct Guess: yellow
+299.513,(3) Correct Guess: green
+300.533,(2) Correct Guess: red
+302.473,(1) Correct Guess: green
+302.473,"Ended with: 0 mistakes, 21 earned, 14 in game time passed"
+304.953,Rated themselves: 3
+304.953,"Entered home screen, displayed jobs: [""i:(0,3906) UberEats - SF: 13 waitTime, 38 timeLimit"",""i:(1,1487) Uber - SF: 7 waitTime, 25 timeLimit"",""i:(2,4262) UberEats - Berkeley: 20 waitTime, 20 timeLimit"",""i:(3,4874) Uber - Berkeley: 5 waitTime, 17 timeLimit""]"
+309.962,"i:(3,374) Job Uber - Berkeley now available"
+311.963,"i:(1,4840) Job Uber - SF now available"
+317.962,"i:(0,1908) Job UberEats - SF now available"
+323.603,"Task UberEats - SF was started with: 12 steps, 38 timeLimit, 76 hardLimit"
+327.003,(12) Correct Guess: pineapple
+329.323,(11) Correct Guess: pineapple
+330.803,(10) Correct Guess: coconut
+332.133,(9) Correct Guess: banana
+334.673,(8) Correct Guess: coconut
+336.253,(7) Correct Guess: coconut
+337.623,(6) Correct Guess: coconut
+339.693,(5) Correct Guess: pineapple
+342.363,(4) Correct Guess: pineapple
+344.173,(3) Correct Guess: banana
+345.853,(2) Correct Guess: coconut
+348.323,(1) Correct Guess: pineapple
+348.323,"Ended with: 0 mistakes, 38 earned, 24 in game time passed"
+350.663,Rated themselves: 3
+350.663,"i:(2,2181) Job UberEats - Berkeley now available"
+350.663,"Entered home screen, displayed jobs: [""i:(0,1489) UberEats - SF: 6 waitTime, 45 timeLimit"",""i:(1,3011) Uber - SF: 6 waitTime, 23 timeLimit"",""i:(2,2181) UberEats - Berkeley: 0 waitTime, 33 timeLimit"",""i:(3,4710) Uber - Berkeley: 1 waitTime, 15 timeLimit""]"
+350.663,"i:(2,1302) Job UberEats - Berkeley now available"
+351.683,"i:(3,4809) Job Uber - Berkeley now available"
+356.442,"Task UberEats - Berkeley was started with: 11 steps, 33 timeLimit, 72 hardLimit"
+359.853,(11) Correct Guess: pineapple
+361.413,(10) Correct Guess: coconut
+362.853,(9) Correct Guess: banana
+364.203,(8) Correct Guess: apple
+365.803,(7) Correct Guess: coconut
+367.483,(6) Correct Guess: coconut
+368.753,(5) Correct Guess: banana
+369.863,(4) Correct Guess: banana
+370.863,(3) Correct Guess: banana
+371.903,(2) Correct Guess: banana
+372.893,(1) Correct Guess: banana
+372.893,"Ended with: 0 mistakes, 33 earned, 16 in game time passed"
+375.563,Rated themselves: 3
+375.563,"Entered home screen, displayed jobs: [""i:(0,2918) UberEats - SF: 2 waitTime, 39 timeLimit"",""i:(1,2638) Uber - SF: 7 waitTime, 19 timeLimit"",""i:(2,22) UberEats - Berkeley: 12 waitTime, 53 timeLimit"",""i:(3,1682) Uber - Berkeley: 7 waitTime, 25 timeLimit""]"
+377.583,"i:(0,4017) Job UberEats - SF now available"
+382.573,"i:(3,3259) Job Uber - Berkeley now available"
+382.573,"i:(1,2308) Job Uber - SF now available"
+383.153,"Task UberEats - SF was started with: 13 steps, 39 timeLimit, 72 hardLimit"
+385.453,(13) Correct Guess: apple
+386.493,(12) Correct Guess: apple
+388.263,(11) Correct Guess: coconut
+389.483,(10) Correct Guess: apple
+391.643,(9) Correct Guess: pineapple
+393.513,(8) Correct Guess: pineapple
+395.393,(7) Correct Guess: pineapple
+396.883,(6) Correct Guess: coconut
+399.493,(5) Correct Guess: pineapple
+400.693,(4) Correct Guess: banana
+401.693,(3) Correct Guess: banana
+403.723,(2) Correct Guess: pineapple
+405.213,"(1) Incorrect Guess: apple, mistyped appe"
+406.593,(1) Correct Guess: apple
+406.593,"Ended with: 1 mistakes, 39 earned, 23 in game time passed"
+409.103,Rated themselves: 2
+409.103,"Entered home screen, displayed jobs: [""i:(0,1473) UberEats - SF: 34 waitTime, 35 timeLimit"",""i:(1,726) Uber - SF: 2 waitTime, 19 timeLimit"",""i:(2,4896) UberEats - Berkeley: 13 waitTime, 39 timeLimit"",""i:(3,4466) Uber - Berkeley: 11 waitTime, 25 timeLimit""]"
+411.113,"i:(1,4564) Job Uber - SF now available"
+412.373,"Task Uber - SF was started with: 9 steps, 19 timeLimit, 34 hardLimit"
+415.853,(9) Correct Guess: yellow
+417.353,(8) Correct Guess: red
+419.033,(7) Correct Guess: green
+421.353,(6) Correct Guess: yellow
+423.583,(5) Correct Guess: yellow
+425.563,(4) Correct Guess: yellow
+427.203,(3) Correct Guess: green
+428.773,(2) Correct Guess: green
+430.323,(1) Correct Guess: green
+430.323,"Ended with: 0 mistakes, 19 earned, 17 in game time passed"
+434.052,Rated themselves: 2
+434.052,"Entered home screen, displayed jobs: [""i:(0,1077) UberEats - SF: 55 waitTime, 59 timeLimit"",""i:(1,1411) Uber - SF: 4 waitTime, 25 timeLimit"",""i:(2,2363) UberEats - Berkeley: 9 waitTime, 32 timeLimit"",""i:(3,2177) Uber - Berkeley: 12 waitTime, 21 timeLimit""]"
+438.063,"i:(1,3273) Job Uber - SF now available"
+438.692,"Task Uber - SF was started with: 12 steps, 25 timeLimit, 44 hardLimit"
+441.943,(12) Correct Guess: yellow
+443.453,(11) Correct Guess: green
+444.643,(10) Correct Guess: green
+445.713,(9) Correct Guess: green
+446.732,(8) Correct Guess: red
+447.512,(7) Correct Guess: red
+448.893,(6) Correct Guess: green
+450.273,(5) Correct Guess: yellow
+452.093,(4) Correct Guess: green
+453.113,(3) Correct Guess: red
+454.363,(2) Correct Guess: green
+455.323,(1) Correct Guess: red
+455.323,"Ended with: 0 mistakes, 25 earned, 16 in game time passed"
+458.512,Rated themselves: 3
+458.512,"Entered home screen, displayed jobs: [""i:(0,423) UberEats - SF: 2 waitTime, 28 timeLimit"",""i:(1,4409) Uber - SF: 1 waitTime, 24 timeLimit"",""i:(2,868) UberEats - Berkeley: 41 waitTime, 40 timeLimit"",""i:(3,2691) Uber - Berkeley: 1 waitTime, 21 timeLimit""]"
+459.533,"i:(3,566) Job Uber - Berkeley now available"
+459.533,"i:(1,2115) Job Uber - SF now available"
+460.523,"i:(0,3912) Job UberEats - SF now available"
+461.503,"Task UberEats - SF was started with: 9 steps, 28 timeLimit, 94 hardLimit"
+464.263,(9) Correct Guess: coconut
+465.913,(8) Correct Guess: apple
+467.252,(7) Correct Guess: banana
+469.113,(6) Correct Guess: banana
+470.333,(5) Correct Guess: apple
+471.553,(4) Correct Guess: apple
+473.673,"(3) Incorrect Guess: pineapple, mistyped pieapple"
+478.162,(3) Correct Guess: pineapple
+480.553,(2) Correct Guess: pineapple
+482.583,(1) Correct Guess: coconut
+482.583,"Ended with: 1 mistakes, 28 earned, 21 in game time passed"
+486.173,Rated themselves: 2
+486.173,"Entered home screen, displayed jobs: [""i:(0,2189) UberEats - SF: 14 waitTime, 37 timeLimit"",""i:(1,244) Uber - SF: 2 waitTime, 25 timeLimit"",""i:(2,2) UberEats - Berkeley: 18 waitTime, 38 timeLimit"",""i:(3,184) Uber - Berkeley: 15 waitTime, 18 timeLimit""]"
+488.193,"i:(1,654) Job Uber - SF now available"
+500.183,"i:(0,4143) Job UberEats - SF now available"
+501.184,"i:(3,3768) Job Uber - Berkeley now available"
+502.013,"Task UberEats - SF was started with: 12 steps, 37 timeLimit, 112 hardLimit"
+504.753,(12) Correct Guess: coconut
+506.123,(11) Correct Guess: apple
+507.363,"(10) Incorrect Guess: apple, mistyped appl"
+508.653,(10) Correct Guess: apple
+509.893,(9) Correct Guess: apple
+512.624,(8) Correct Guess: pineapple
+514.053,(7) Correct Guess: apple
+516.323,(6) Correct Guess: pineapple
+517.763,(5) Correct Guess: banana
+518.943,(4) Correct Guess: banana
+520.083,(3) Correct Guess: banana
+522.683,(2) Correct Guess: pineapple
+524.803,(1) Correct Guess: pineapple
+524.803,"Ended with: 1 mistakes, 37 earned, 22 in game time passed"
+527.833,Rated themselves: 2
+527.833,"i:(3,4053) Job Uber - Berkeley now available"
+527.833,"i:(1,3441) Job Uber - SF now available"
+527.833,"Entered home screen, displayed jobs: [""i:(0,264) UberEats - SF: 16 waitTime, 53 timeLimit"",""i:(1,3441) Uber - SF: 0 waitTime, 21 timeLimit"",""i:(2,3384) UberEats - Berkeley: 15 waitTime, 39 timeLimit"",""i:(3,4053) Uber - Berkeley: 0 waitTime, 18 timeLimit""]"
+527.833,"i:(3,3463) Job Uber - Berkeley now available"
+527.833,"i:(1,103) Job Uber - SF now available"
+542.843,"i:(2,3068) Job UberEats - Berkeley now available"
+543.843,"i:(0,603) Job UberEats - SF now available"
+549.013,"Task UberEats - Berkeley was started with: 13 steps, 39 timeLimit, 80 hardLimit"
+551.823,(13) Correct Guess: apple
+553.144,(12) Correct Guess: banana
+554.813,(11) Correct Guess: coconut
+556.593,(10) Correct Guess: coconut
+557.993,(9) Correct Guess: apple
+559.183,(8) Correct Guess: apple
+560.262,(7) Correct Guess: apple
+562.983,(6) Correct Guess: pineapple
+564.313,(5) Correct Guess: apple
+565.663,(4) Correct Guess: banana
+566.883,(3) Correct Guess: banana
+568.643,(2) Correct Guess: coconut
+570.043,(1) Correct Guess: banana
+570.043,"Ended with: 0 mistakes, 39 earned, 21 in game time passed"
+573.273,Rated themselves: 3
+573.273,"i:(1,3079) Job Uber - SF now available"
+573.273,"Entered home screen, displayed jobs: [""i:(0,4911) UberEats - SF: 16 waitTime, 37 timeLimit"",""i:(1,3079) Uber - SF: 0 waitTime, 25 timeLimit"",""i:(2,3760) UberEats - Berkeley: 5 waitTime, 63 timeLimit"",""i:(3,3524) Uber - Berkeley: 16 waitTime, 21 timeLimit""]"
+573.273,"i:(1,2437) Job Uber - SF now available"
+578.293,"i:(2,63) Job UberEats - Berkeley now available"
+580.842,"Task Uber - SF was started with: 12 steps, 25 timeLimit, 40 hardLimit"
+585.203,(12) Correct Guess: yellow
+587.073,(11) Correct Guess: green
+588.593,(10) Correct Guess: yellow
+589.943,(9) Correct Guess: green
+591.323,(8) Correct Guess: green
+592.303,(7) Correct Guess: red
+593.963,(6) Correct Guess: green
+595.113,(5) Correct Guess: red
+596.833,(4) Correct Guess: yellow
+598.634,(3) Correct Guess: yellow
+600.423,(2) Correct Guess: green
+602.773,(1) Correct Guess: yellow
+602.773,"Ended with: 0 mistakes, 25 earned, 21 in game time passed"
+606.063,Rated themselves: 2
+606.063,"Entered home screen, displayed jobs: [""i:(0,962) UberEats - SF: 1 waitTime, 24 timeLimit"",""i:(1,3900) Uber - SF: 5 waitTime, 20 timeLimit"",""i:(2,4864) UberEats - Berkeley: 4 waitTime, 29 timeLimit"",""i:(3,4017) Uber - Berkeley: 13 waitTime, 27 timeLimit""]"
+607.073,"i:(0,737) Job UberEats - SF now available"
+607.863,"Task UberEats - SF was started with: 8 steps, 24 timeLimit, 82 hardLimit"
+611.563,(8) Correct Guess: pineapple
+614.003,(7) Correct Guess: pineapple
+615.563,(6) Correct Guess: coconut
+616.863,(5) Correct Guess: apple
+618.053,(4) Correct Guess: apple
+619.303,(3) Correct Guess: banana
+620.953,(2) Correct Guess: apple
+622.053,(1) Correct Guess: apple
+622.053,"Ended with: 0 mistakes, 24 earned, 14 in game time passed"
+625.733,Rated themselves: 3
+625.733,"i:(3,476) Job Uber - Berkeley now available"
+625.733,"i:(2,1062) Job UberEats - Berkeley now available"
+625.733,"Entered home screen, displayed jobs: [""i:(0,111) UberEats - SF: 28 waitTime, 48 timeLimit"",""i:(1,1901) Uber - SF: 5 waitTime, 16 timeLimit"",""i:(2,1062) UberEats - Berkeley: 0 waitTime, 46 timeLimit"",""i:(3,476) Uber - Berkeley: 0 waitTime, 21 timeLimit""]"
+625.733,"i:(3,595) Job Uber - Berkeley now available"
+625.733,"i:(2,3384) Job UberEats - Berkeley now available"
+630.743,"i:(1,2783) Job Uber - SF now available"
+632.193,"Task UberEats - Berkeley was started with: 15 steps, 46 timeLimit, 78 hardLimit"
+634.313,(15) Correct Guess: apple
+635.613,(14) Correct Guess: banana
+636.713,(13) Correct Guess: banana
+638.323,(12) Correct Guess: coconut
+639.763,(11) Correct Guess: coconut
+641.303,(10) Correct Guess: coconut
+642.682,(9) Correct Guess: coconut
+644.153,(8) Correct Guess: apple
+645.413,(7) Correct Guess: banana
+646.633,(6) Correct Guess: banana
+648.183,(5) Correct Guess: coconut
+649.813,(4) Correct Guess: banana
+651.063,(3) Correct Guess: apple
+653.393,(2) Correct Guess: pineapple
+655.313,(1) Correct Guess: coconut
+655.313,"Ended with: 0 mistakes, 46 earned, 23 in game time passed"
+658.713,Rated themselves: 3
+658.713,"Entered home screen, displayed jobs: [""i:(0,3094) UberEats - SF: 24 waitTime, 45 timeLimit"",""i:(1,3022) Uber - SF: 1 waitTime, 17 timeLimit"",""i:(2,1387) UberEats - Berkeley: 8 waitTime, 41 timeLimit"",""i:(3,1410) Uber - Berkeley: 2 waitTime, 24 timeLimit""]"
+659.723,"i:(1,2791) Job Uber - SF now available"
+660.723,"i:(3,2042) Job Uber - Berkeley now available"
+666.723,"i:(2,2362) Job UberEats - Berkeley now available"
+682.722,"i:(0,4438) Job UberEats - SF now available"
+697.243,"Task UberEats - SF was started with: 15 steps, 45 timeLimit, 50 hardLimit"
+702.433,(15) Correct Guess: banana
+705.173,(14) Correct Guess: pineapple
+706.413,(13) Correct Guess: banana
+708.683,(12) Correct Guess: pineapple
+710.193,(11) Correct Guess: apple
+711.653,(10) Correct Guess: apple
+714.123,(9) Correct Guess: pineapple
+715.433,(8) Correct Guess: banana
+716.673,(7) Correct Guess: banana
+717.843,(6) Correct Guess: banana
+719.163,(5) Correct Guess: apple
+720.423,"(4) Incorrect Guess: apple, mistyped appl"
+721.253,(4) Correct Guess: apple
+722.963,(3) Correct Guess: coconut
+724.983,(2) Correct Guess: pineapple
+727.393,(1) Correct Guess: pineapple
+727.393,"Ended with: 1 mistakes, 45 earned, 30 in game time passed"
+730.653,Rated themselves: 2
+730.653,"Entered home screen, displayed jobs: [""i:(0,3614) UberEats - SF: 4 waitTime, 51 timeLimit"",""i:(1,2607) Uber - SF: 5 waitTime, 21 timeLimit"",""i:(2,2147) UberEats - Berkeley: 5 waitTime, 38 timeLimit"",""i:(3,4040) Uber - Berkeley: 3 waitTime, 15 timeLimit""]"
+733.663,"i:(3,3925) Job Uber - Berkeley now available"
+734.662,"i:(0,3400) Job UberEats - SF now available"
+735.662,"i:(2,3762) Job UberEats - Berkeley now available"
+735.662,"i:(1,3673) Job Uber - SF now available"
+744.742,"Task UberEats - SF was started with: 17 steps, 51 timeLimit, 74 hardLimit"
+747.603,(17) Correct Guess: banana
+750.253,(16) Correct Guess: pineapple
+751.924,(15) Correct Guess: coconut
+753.173,(14) Correct Guess: banana
+754.433,(13) Correct Guess: apple
+755.843,(12) Correct Guess: coconut
+757.033,(11) Correct Guess: apple
+759.503,(10) Correct Guess: coconut
+761.853,(9) Correct Guess: pineapple
+764.033,"(8) Incorrect Guess: pineapple, mistyped i'm tired"
+767.273,(8) Correct Guess: pineapple
+768.653,(7) Correct Guess: apple
+770.243,(6) Correct Guess: coconut
+772.213,(5) Correct Guess: pineapple
+773.743,(4) Correct Guess: banana
+774.923,(3) Correct Guess: banana
+775.943,(2) Correct Guess: banana
+778.113,(1) Correct Guess: pineapple
+778.113,"Ended with: 1 mistakes, 51 earned, 33 in game time passed"
+781.353,Rated themselves: 2
+781.353,"i:(0,1007) Job UberEats - SF now available"
+781.353,"Entered home screen, displayed jobs: [""i:(0,1007) UberEats - SF: 0 waitTime, 30 timeLimit"",""i:(1,3256) Uber - SF: 1 waitTime, 17 timeLimit"",""i:(2,4478) UberEats - Berkeley: 44 waitTime, 30 timeLimit"",""i:(3,1483) Uber - Berkeley: 9 waitTime, 17 timeLimit""]"
+781.353,"i:(0,984) Job UberEats - SF now available"
+782.212,"Task UberEats - SF was started with: 10 steps, 30 timeLimit, 60 hardLimit"
+785.353,(10) Correct Guess: banana
+787.963,(9) Correct Guess: pineapple
+789.463,(8) Correct Guess: coconut
+790.763,(7) Correct Guess: banana
+792.573,(6) Correct Guess: pineapple
+794.913,(5) Correct Guess: pineapple
+797.593,(4) Correct Guess: banana
+798.813,(3) Correct Guess: apple
+800.262,(2) Correct Guess: coconut
+801.633,(1) Correct Guess: coconut
+801.633,"Ended with: 0 mistakes, 30 earned, 19 in game time passed"
+804.882,Rated themselves: 3
+804.882,"i:(3,1534) Job Uber - Berkeley now available"
+804.882,"Entered home screen, displayed jobs: [""i:(0,4439) UberEats - SF: 37 waitTime, 47 timeLimit"",""i:(1,385) Uber - SF: 3 waitTime, 16 timeLimit"",""i:(2,4481) UberEats - Berkeley: 5 waitTime, 47 timeLimit"",""i:(3,1534) Uber - Berkeley: 0 waitTime, 19 timeLimit""]"
+804.882,"i:(3,3438) Job Uber - Berkeley now available"
+807.902,"i:(1,642) Job Uber - SF now available"
+809.903,"i:(2,3509) Job UberEats - Berkeley now available"
+839.972,"Task UberEats - Berkeley was started with: 15 steps, 47 timeLimit, 62 hardLimit"
+844.463,(15) Correct Guess: coconut
+845.773,(14) Correct Guess: apple
+848.263,(13) Correct Guess: apple
+849.713,(12) Correct Guess: banana
+851.713,(11) Correct Guess: apple
+853.793,(10) Correct Guess: pineapple
+855.373,(9) Correct Guess: coconut
+856.823,(8) Correct Guess: coconut
+858.723,(7) Correct Guess: pineapple
+860.063,(6) Correct Guess: banana
+861.403,(5) Correct Guess: apple
+863.053,(4) Correct Guess: coconut
+864.423,(3) Correct Guess: banana
+866.113,(2) Correct Guess: coconut
+867.633,(1) Correct Guess: banana
+867.633,"Ended with: 0 mistakes, 47 earned, 27 in game time passed"
+870.793,Rated themselves: 3
+870.793,"Entered home screen, displayed jobs: [""i:(0,1081) UberEats - SF: 22 waitTime, 45 timeLimit"",""i:(1,4010) Uber - SF: 3 waitTime, 26 timeLimit"",""i:(2,2971) UberEats - Berkeley: 32 waitTime, 48 timeLimit"",""i:(3,668) Uber - Berkeley: 10 waitTime, 21 timeLimit""]"
+873.803,"i:(1,502) Job Uber - SF now available"
+880.802,"i:(3,3229) Job Uber - Berkeley now available"
+892.803,"i:(0,1685) Job UberEats - SF now available"
+902.803,"i:(2,4286) Job UberEats - Berkeley now available"
+904.973,"Task UberEats - SF was started with: 15 steps, 45 timeLimit, 84 hardLimit"
+908.103,(15) Correct Guess: coconut
+909.373,(14) Correct Guess: banana
+911.793,(13) Correct Guess: pineapple
+913.813,(12) Correct Guess: pineapple
+915.293,(11) Correct Guess: apple
+917.273,(10) Correct Guess: pineapple
+919.123,(9) Correct Guess: coconut
+920.583,(8) Correct Guess: banana
+921.773,(7) Correct Guess: banana
+923.393,(6) Correct Guess: coconut
+924.643,"(5) Incorrect Guess: apple, mistyped appl"
+925.373,(5) Correct Guess: apple
+926.643,(4) Correct Guess: apple
+927.893,(3) Correct Guess: banana
+929.123,(2) Correct Guess: banana
+931.933,(1) Correct Guess: pineapple
+931.933,"Ended with: 1 mistakes, 45 earned, 26 in game time passed"
+934.943,Rated themselves: 2
+934.943,"Entered home screen, displayed jobs: [""i:(0,4044) UberEats - SF: 2 waitTime, 37 timeLimit"",""i:(1,4973) Uber - SF: 9 waitTime, 21 timeLimit"",""i:(2,2017) UberEats - Berkeley: 25 waitTime, 21 timeLimit"",""i:(3,2367) Uber - Berkeley: 18 waitTime, 15 timeLimit""]"
+936.953,"i:(0,3615) Job UberEats - SF now available"
+937.853,"Task UberEats - SF was started with: 12 steps, 37 timeLimit, 62 hardLimit"
+941.173,(12) Correct Guess: banana
+942.353,(11) Correct Guess: banana
+943.473,(10) Correct Guess: banana
+946.013,(9) Correct Guess: pineapple
+947.843,(8) Correct Guess: pineapple
+949.073,(7) Correct Guess: apple
+950.893,(6) Correct Guess: pineapple
+952.073,(5) Correct Guess: banana
+953.073,(4) Correct Guess: banana
+955.723,(3) Correct Guess: pineapple
+957.813,(2) Correct Guess: apple
+958.913,(1) Correct Guess: apple
+958.913,"Ended with: 0 mistakes, 37 earned, 21 in game time passed"
+961.953,Rated themselves: 3
+961.953,"Entered home screen, displayed jobs: [""i:(0,3703) UberEats - SF: 24 waitTime, 41 timeLimit"",""i:(1,223) Uber - SF: 7 waitTime, 13 timeLimit"",""i:(2,305) UberEats - Berkeley: 5 waitTime, 40 timeLimit"",""i:(3,674) Uber - Berkeley: 4 waitTime, 14 timeLimit""]"
+965.963,"i:(3,1508) Job Uber - Berkeley now available"
+966.963,"i:(2,4132) Job UberEats - Berkeley now available"
+968.963,"i:(1,4408) Job Uber - SF now available"
+974.733,"Task Uber - SF was started with: 6 steps, 13 timeLimit, 26 hardLimit"
+977.053,(6) Correct Guess: yellow
+978.423,(5) Correct Guess: red
+980.233,(4) Correct Guess: green
+981.893,"(3) Incorrect Guess: yellow, mistyped yello"
+983.293,(3) Correct Guess: yellow
+984.943,(2) Correct Guess: green
+985.984,(1) Correct Guess: red
+985.984,"Ended with: 1 mistakes, 13 earned, 11 in game time passed"
+988.363,Rated themselves: 1
+988.363,"Entered home screen, displayed jobs: [""i:(0,642) UberEats - SF: 61 waitTime, 22 timeLimit"",""i:(1,1499) Uber - SF: 1 waitTime, 18 timeLimit"",""i:(2,817) UberEats - Berkeley: 10 waitTime, 36 timeLimit"",""i:(3,2129) Uber - Berkeley: 4 waitTime, 24 timeLimit""]"
+989.373,"i:(1,4255) Job Uber - SF now available"
+992.373,"i:(3,3070) Job Uber - Berkeley now available"
+998.373,"i:(2,3779) Job UberEats - Berkeley now available"
+1049.653,"i:(0,808) Job UberEats - SF now available"
+1054.453,"Task UberEats - SF was started with: 7 steps, 22 timeLimit, 80 hardLimit"
+1058.413,(7) Correct Guess: pineapple
+1059.713,(6) Correct Guess: banana
+1061.213,(5) Correct Guess: coconut
+1062.433,(4) Correct Guess: banana
+1063.783,(3) Correct Guess: coconut
+1065.763,(2) Correct Guess: pineapple
+1067.203,(1) Correct Guess: coconut
+1067.203,"Ended with: 0 mistakes, 22 earned, 12 in game time passed"
+1069.923,Rated themselves: 3
+1069.923,"Entered home screen, displayed jobs: [""i:(0,4180) UberEats - SF: 19 waitTime, 31 timeLimit"",""i:(1,1483) Uber - SF: 4 waitTime, 17 timeLimit"",""i:(2,1215) UberEats - Berkeley: 13 waitTime, 42 timeLimit"",""i:(3,922) Uber - Berkeley: 3 waitTime, 23 timeLimit""]"
+1072.933,"i:(3,1389) Job Uber - Berkeley now available"
+1073.933,"i:(1,4636) Job Uber - SF now available"
+1082.933,"i:(2,2498) Job UberEats - Berkeley now available"
+1088.933,"i:(0,2635) Job UberEats - SF now available"
+1090.802,"Task UberEats - SF was started with: 10 steps, 31 timeLimit, 96 hardLimit"
+1093.413,(10) Correct Guess: pineapple
+1094.873,(9) Correct Guess: coconut
+1096.293,(8) Correct Guess: apple
+1098.283,(7) Correct Guess: pineapple
+1099.753,(6) Correct Guess: coconut
+1101.143,(5) Correct Guess: coconut
+1103.063,(4) Correct Guess: pineapple
+1104.553,(3) Correct Guess: apple
+1105.773,(2) Correct Guess: apple
+1106.993,(1) Correct Guess: banana
+1106.993,"Ended with: 0 mistakes, 31 earned, 16 in game time passed"
+1110.053,Rated themselves: 3
+1110.053,"Entered home screen, displayed jobs: [""i:(0,38) UberEats - SF: 43 waitTime, 40 timeLimit"",""i:(1,4583) Uber - SF: 21 waitTime, 21 timeLimit"",""i:(2,1173) UberEats - Berkeley: 17 waitTime, 47 timeLimit"",""i:(3,455) Uber - Berkeley: 19 waitTime, 22 timeLimit""]"
+1127.063,"i:(2,1360) Job UberEats - Berkeley now available"
+1129.062,"i:(3,853) Job Uber - Berkeley now available"
+1131.063,"i:(1,197) Job Uber - SF now available"
+1153.651,"i:(0,4809) Job UberEats - SF now available"
+1200.652,Finished Game
