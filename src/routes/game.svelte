@@ -29,7 +29,8 @@
 
 	/* User Input (reactive ui elem) */
 	let userInput = '';
-	let status = 'type!';
+	let status = 'Type!';
+	let displayStatus = 'Type!';
 
 	function round(value, decimals) {
 		return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
@@ -50,10 +51,9 @@
 	function checkGuess() {
 		if (stepsLeft <= 0) return;
 		const userAnswer = userInput.toLowerCase();
-
 		if (userAnswer === currentWord) {
 			logHistory(`(${stepsLeft}) Correct Guess: ${currentWord}`);
-			status = 'Correct!';
+			displayStatus = 'Correct!';
 			userInput = '';
 			stepsLeft--;
 			if (stepsLeft > 0) {
@@ -62,9 +62,13 @@
 			}
 		} else {
 			logHistory(`(${stepsLeft}) Incorrect Guess: ${currentWord}, mistyped ${userAnswer}`);
-			status = 'Incorrect. Try again.';
+			displayStatus = 'Incorrect. Try again.';
 			mistakes++;
 		}
+		setTimeout(() => {
+        	displayStatus = 'Type!';
+    	}, 400);
+		
 	}
 
 	function handleKeyUp(event) {
@@ -115,6 +119,8 @@
 	}
 
 	$: {
+		status = displayStatus;
+
 		if (stepsLeft <= 0) {
 			finish();
 		}

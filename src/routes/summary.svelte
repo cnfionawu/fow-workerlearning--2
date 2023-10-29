@@ -34,7 +34,7 @@
 
 <div class="page">
 	{#if time == hardLimit}
-		<h3>You have not completed {job} job, the customer has canceled the order</h3>
+		<h3>You have not completed {job} job,<br>the customer has canceled the order</h3>
 	{:else}
 		<h3>You have completed {job} job in {time}s</h3>
 	{/if}
@@ -57,38 +57,18 @@
 		<div class="slider-label">{proficiencyText[0]}</div>
 	</div> -->
 	<h4>Rate your proficiency on this job:</h4>
-	<div class="radio-container">
-		<div class="slider-label">{proficiencyText[0]}</div>
-		<label class="radio-label">
-			<input type="radio" bind:group={rating} value="3" />
-			<span class="radio-text">3</span>
-		</label>
-		<label class="radio-label">
-			<input type="radio" bind:group={rating} value="2" />
-			<span class="radio-text">2</span>
-		</label>
-		<label class="radio-label">
-			<input type="radio" bind:group={rating} value="1" />
-			<span class="radio-text">1</span>
-		</label>
-		<label class="radio-label">
-			<input type="radio" bind:group={rating} value="0" />
-			<span class="radio-text">0</span>
-		</label>
-		<label class="radio-label">
-			<input type="radio" bind:group={rating} value="-1" />
-			<span class="radio-text">-1</span>
-		</label>
-		<label class="radio-label">
-			<input type="radio" bind:group={rating} value="-2" />
-			<span class="radio-text">-2</span>
-		</label>
-		<label class="radio-label">
-			<input type="radio" bind:group={rating} value="-3" />
-			<span class="radio-text">-3</span>
-		</label>
-		<div class="slider-label">{proficiencyText[1]}</div>
-	</div>
+	<div class="rating">
+		<input type="radio" name="star" class="star-1" id="star-1" bind:group={rating} value="1" />
+		<label class="star" for="star-1"></label>
+		<input type="radio" name="star" class="star-2" id="star-2" bind:group={rating} value="2" />
+		<label class="star" for="star-2"></label>
+		<input type="radio" name="star" class="star-3" id="star-3" bind:group={rating} value="3" />
+		<label class="star" for= "star-3"></label>
+		<input type="radio" name="star" class="star-4" id="star-4" bind:group={rating} value="4" />
+		<label class="star" for="star-4"></label>
+		<input type="radio" name="star" class="star-5" id="star-5" bind:group={rating} value="5" />
+		<label class="star" for="star-5"></label>
+	  </div>
 	
 
 
@@ -137,24 +117,28 @@
 	.slider-label {
 		font-size: 16px;
 	} */
-	.radio-container {
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    width: 50%; 
-    margin: 0 auto; 
-	}
+	.rating {
+  display: inline-block;
+}
 
+.star {
+  font-size: 20px;
+  padding: 5px;
+  cursor: pointer;
+}
 
-	.radio-label {
-    display: flex;
-    align-items: center;
-    margin: 5px;
-	}
+input[type="radio"] {
+  display: none;
+}
 
-	.radio-text {
-		margin-left: 5px; 
-	}
+.star::before {
+  content: "\2605"; 
+  color: #ccc; 
+}
+
+input[type="radio"]:checked + label::before {
+  color: #f0ad4e; 
+}
 
 
 </style>
