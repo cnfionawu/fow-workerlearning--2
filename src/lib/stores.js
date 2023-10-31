@@ -1,5 +1,6 @@
 // place files you want to import through the `$lib` alias in this folder.
 import { writable, readable, derived } from 'svelte/store';
+// import uploadData from '$routes/page.svelte';
 
 /* Time Stamps & History */
 
@@ -24,9 +25,39 @@ export const timeStamp = derived(time, ($time) => $time - start);
 export const history = writable([]);
 
 let t;
+let lastHistoryResetTime = 0;
+
 timeStamp.subscribe((v) => {
 	t = v / 1000;
+	if (t - lastHistoryResetTime >= 10) {
+		lastHistoryResetTime = t;
+		uploadData();
+		restartHistory();
+	}
 });
+
+export function restartHistory() {
+	history.set([]);
+}
+
+// const historyDataDerived = derived(history, ($history) => {
+// 	return $history;
+//   });
+let historyData = [];
+
+const historydata = history.subscribe(($history) => {
+  historyData = $history; 
+})
+export const print = writable([]);
+function uploadData() {
+	const gameArrToSend = JSON.stringify(historyData);
+	print.set([gameArrToSend]);
+	console.log('Sending experiment result:', gameArrToSend);
+	console.log('Type of experiment result:', typeof gameArrToSend);
+	window.parent.postMessage({ type: 'gameArr', data: gameArrToSend }, '*');
+} 
+
+
 
 export function logHistory(message) {
 	console.log('DEBUG', t);

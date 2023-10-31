@@ -11,10 +11,11 @@
 		history,
 		logHistory,
 		resetTimer,
-		currLocation
+		currLocation,
+		print
 	} from '$lib/stores.js';
 
-	const timeLimit = 1200;
+	const timeLimit = 40;
 
 	$: inGame = $game.inGame;
 	$: timeUp = $elapsed > timeLimit;
@@ -28,14 +29,15 @@
 		logHistory(`${userName} started a game with ${timeLimit} timeLimit`);
 	}
 
-	$: {
-		if (timeUp) {
-			const gameArrToSend = JSON.stringify($history);
-			console.log('Sending experiment result:', gameArrToSend);
-			console.log('Type of experiment result:', typeof gameArrToSend);
-			window.parent.postMessage({ type: 'gameArr', data: gameArrToSend }, '*');
-		}
-	}
+	// $: {
+	// 	if (timeUp) {
+	// 		const gameArrToSend = JSON.stringify($history);
+	// 		console.log('Sending experiment result:', gameArrToSend);
+	// 		console.log('Type of experiment result:', typeof gameArrToSend);
+	// 		window.parent.postMessage({ type: 'gameArr', data: gameArrToSend }, '*');
+	// 	}
+	// }
+
 </script>
 
 {#if !timeUp && started}
@@ -70,10 +72,14 @@
 <div class="traveling">Traveling ...</div>
 {/if}
 
-<!-- <div>
+<!-- debug -->
+<div>
 	<i>history:</i>
 	{JSON.stringify($history)}
-</div> -->
+	<p>uploaded: {$print}</p>
+</div>
+
+
 <style>
 	.traveling {
 		position: fixed;
