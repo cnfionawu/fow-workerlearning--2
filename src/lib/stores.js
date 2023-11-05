@@ -190,7 +190,11 @@ export function startGame(isUberEats, earnings, numSteps, timeLimit, hardLimit) 
 export function endGame(gained, gameState) {
 	console.log('Ending');
 
-	earned.update((n) => n + gained);
+	// earned.update((n) => n + gained);
+	earned.update((n) => {
+		const updatedValue = parseFloat((n + gained).toFixed(2));
+		return updatedValue;
+	});
 
 	gameState.inGame = false;
 	gameState.inSummary = true;

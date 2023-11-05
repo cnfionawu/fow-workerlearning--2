@@ -94,6 +94,11 @@
 					curTime = get(elapsed);
 					logHistory(`i:(${jobData.index}) Job ${title} now available`);
 				}
+			} else if (countdown == 0 && !jobData.ready) {
+				console.log('make job readddddyyyy!')
+				updateJobState(jobData.id, true, false);
+				curTime = get(elapsed);
+				logHistory(`i:(${jobData.index}) Job ${title} now available`);
 			} else if (jobData.ready && !jobData.expired && get(elapsed) - curTime >= expirationTime) {
 			// Update job as expired in the store
 				console.log('dettteeected!')
@@ -101,7 +106,7 @@
 				curTime = null;
 				logHistory(`i:(${jobData.index}) Job ${title} has expired`);
 				// generateSingleData(jobData.id);
-			}
+			} 
 		});
 	});
 

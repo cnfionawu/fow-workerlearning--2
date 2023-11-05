@@ -29,7 +29,10 @@
         confirmation = false;
         confirmedToStay.set(false);
         earning = parseFloat((get(LeisureTime) * leisurePay).toFixed(2));
-        earned.update((n) => n + earning);
+        earned.update((n) => {
+            const updatedValue = parseFloat((n + earning).toFixed(2));
+            return updatedValue;
+        });
         clearInterval(timer);
         logHistory('Confirm to leave leisure, stayed for ' + get(LeisureTime) + 's, earned $' + earning);
 
@@ -40,7 +43,10 @@
         confirmation = false;
         confirmedToStay.set(false);
         earning = parseFloat((get(LeisureTime) * leisurePay).toFixed(2));
-        earned.update((n) => n + earning);
+        earned.update((n) => {
+            const updatedValue = parseFloat((n + earning).toFixed(2));
+            return updatedValue;
+        });
         logHistory('Did not choose in 5s, forced to leave leisure, stayed for ' + get(LeisureTime) + 's, earned $' + earning);
 
     };

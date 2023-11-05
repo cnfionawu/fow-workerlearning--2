@@ -85,11 +85,11 @@
 {/if}
 
 <!-- debug -->
-<div>
+<!-- <div>
 	<i class="debug">history:</i>
-	{JSON.stringify($history)}
+	{JSON.stringify($history)} -->
 	<!-- <p>uploaded: {$print}</p> -->
-</div>
+<!-- </div> -->
 
 
 <style>
