@@ -3,7 +3,7 @@ import { writable, readable, derived, get} from 'svelte/store';
 import { data } from '$lib/data.js';
 
 /* Time Stamps & History */
-export const FullTimeLimit = 12000;
+export const FullTimeLimit = 1200;
 let start;
 export const confirmedToStay = writable(false);
 export const LeisureTime = writable(0.0);
