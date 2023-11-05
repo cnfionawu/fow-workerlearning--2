@@ -75,6 +75,9 @@
 		if (event.key === 'Enter') {
 			checkGuess();
 		}
+		if ((event.ctrlKey || event.metaKey) && event.key === 'v') {
+			logHistory('Paste action detected');
+		}
 	}
 
 	// const lastEntry = $history[$history.length - 1];
@@ -141,7 +144,7 @@
 		<p>Left: {stepsLeft}</p>
 
 		<img id="input-img" src="./images/{currentWord}.jpg" alt="img" />
-		<input bind:value={userInput} type="text" placeholder="Input" on:keyup={handleKeyUp} />
+		<input bind:value={userInput} type="text" placeholder="Input" on:keydown={handleKeyUp} />
 
 		<div class="status">{status}</div>
 	</div>

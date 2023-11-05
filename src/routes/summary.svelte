@@ -58,6 +58,7 @@
 	</div> -->
 	<h4>Rate your proficiency on this job:</h4>
 	<div class="rating">
+		<div class="left-label">still learning</div>
 		<input type="radio" name="star" class="star-1" id="star-1" bind:group={rating} value="1" />
 		<label class="star" for="star-1"></label>
 		<input type="radio" name="star" class="star-2" id="star-2" bind:group={rating} value="2" />
@@ -68,7 +69,8 @@
 		<label class="star" for="star-4"></label>
 		<input type="radio" name="star" class="star-5" id="star-5" bind:group={rating} value="5" />
 		<label class="star" for="star-5"></label>
-	  </div>
+		<div class="right-label">proficient</div>
+	</div>
 	
 
 
@@ -118,27 +120,40 @@
 		font-size: 16px;
 	} */
 	.rating {
-  display: inline-block;
-}
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%; 
+		max-width: 600px; 
+		margin: 0 auto;
+	}
 
-.star {
-  font-size: 20px;
-  padding: 5px;
-  cursor: pointer;
-}
+	.star {
+	font-size: 20px;
+	padding: 5px;
+	cursor: pointer;
+	}
 
-input[type="radio"] {
-  display: none;
-}
+	input[type="radio"] {
+	display: none;
+	}
 
-.star::before {
-  content: "\2605"; 
-  color: #ccc; 
-}
+	.star::before {
+	content: "\2605"; 
+	color: #ccc; 
+	}
 
-input[type="radio"]:checked + label::before {
-  color: #f0ad4e; 
-}
-
+	input[type="radio"]:checked + label::before {
+	color: #f0ad4e; 
+	}
+	.left-label{
+		flex: 1; 
+  		text-align: center;
+		 
+	}
+	.right-label{
+		flex: 1; 
+  		text-align: center; 
+	}
 
 </style>
