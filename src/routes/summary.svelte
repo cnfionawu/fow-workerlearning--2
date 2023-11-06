@@ -16,6 +16,8 @@
 	/* reactive ui stuff */
 	const proficiencyText = ['Very Good', 'Very Bad'];
 	let rating = 0;
+	let isRatingSelected = false; 
+	$: isRatingSelected = rating > 0;
 
 	function returnHome() {
 		logHistory(`Rated themselves: ${rating}`);
@@ -74,7 +76,7 @@
 	
 
 
-	<button on:click={returnHome}>Return</button>
+	<button on:click={returnHome} disabled={!isRatingSelected}>Return</button>
 </div>
 
 <style>
