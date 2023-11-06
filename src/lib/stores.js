@@ -8,6 +8,7 @@ let start;
 export const confirmedToStay = writable(false);
 export const LeisureTime = writable(0.0);
 export const leisurePay = 0.01;
+export const GameOver = writable(false);
 
 export function resetTimer() {
 	start = new Date();
@@ -33,7 +34,11 @@ const sendInterval = 60;
 
 timeStamp.subscribe((v) => {
 	t = v / 1000;
-	if (t - lastHistoryResetTime >= sendInterval) {
+	if (get(GameOver)) {
+		uploadData();
+		GameOver.set(false);
+	}
+	else if (t - lastHistoryResetTime >= sendInterval) {
 		lastHistoryResetTime = t;
 		uploadData();
 		restartHistory();

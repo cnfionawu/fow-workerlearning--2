@@ -1,9 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
-	import { logHistory, history } from '$lib/stores.js';
+	import { logHistory, history, GameOver } from '$lib/stores.js';
 
 	onMount(() => {
 		logHistory('Finished Game');
+        GameOver.set(true);
 	});
 </script>
 
