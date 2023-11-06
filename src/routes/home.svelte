@@ -6,6 +6,7 @@
   
 	function switchToLeisure() {
 		$game.inLeisure = true;
+		logHistory('choose Switch to Leisure')
 	}
 	
 	generateData();
