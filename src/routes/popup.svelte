@@ -9,68 +9,66 @@
 		logHistory,
         LeisureTime,
         leisurePay,
-        confirmedToStay
+        confirmedToStay,
+        leisureStart
 	} from '$lib/stores.js';
 
-    let confirmation = false;
     let timer;
     let stayTime;
     let earning;
+    export let closePopup; 
 
     const confirmStay = () => {
-      confirmation = true;
-      confirmedToStay.set(true);
-      clearTimeout(timer);
-      logHistory('Confirm to stay in leisure');
+        confirmedToStay.set(true);
+        clearTimeout(timer);
+        closePopup();
+        logHistory("confirm stay in leisure", null, 'Confirm to stay in leisure');
     };
   
     const cancelStay = () => {
         $game.inChoices = true;
-        confirmation = false;
         confirmedToStay.set(false);
-        earning = parseFloat((get(LeisureTime) * leisurePay).toFixed(2));
+        const inLeisureTime = get(LeisureTime) - get(leisureStart);
+        earning = parseFloat((inLeisureTime * leisurePay).toFixed(2));
         earned.update((n) => {
             const updatedValue = parseFloat((n + earning).toFixed(2));
             return updatedValue;
         });
         clearInterval(timer);
-        logHistory('Confirm to leave leisure, stayed for ' + get(LeisureTime) + 's, earned $' + earning);
+        logHistory("confirm leave leisure", [inLeisureTime, earning], 'Confirm to leave leisure, stayed for ' + inLeisureTime + 's, earned $' + earning);
 
     };
 
     const noResponse = () => {
         $game.inChoices = true;
-        confirmation = false;
         confirmedToStay.set(false);
-        earning = parseFloat((get(LeisureTime) * leisurePay).toFixed(2));
+        const inLeisureTime = get(LeisureTime) - get(leisureStart);
+        earning = parseFloat((inLeisureTime * leisurePay).toFixed(2));
         earned.update((n) => {
             const updatedValue = parseFloat((n + earning).toFixed(2));
             return updatedValue;
         });
-        logHistory('Did not choose in 5s, forced to leave leisure, stayed for ' + get(LeisureTime) + 's, earned $' + earning);
+        logHistory("didn't choose", [inLeisureTime, earning], 'Did not choose in 5s, forced to leave leisure, stayed for ' + inLeisureTime + 's, earned $' + earning);
 
     };
 
     onMount(() => {
         timer = setTimeout(noResponse, 5000); // set a timer to trigger cancelStay after 5 seconds
     });
+    
 </script>
   
-<div>
-    {#if !confirmation}
-        <div>
+<!-- {#if !get(confirmedToStay)} -->
+    <div>
         <p>Are you still there? Click YES within 5 seconds to stay in leisure.</p>
         <button on:click={confirmStay}>YES</button>
         <button on:click={cancelStay}>NO</button>
-        </div>
-    {:else}
-        <p>Enjoy your leisure time!</p>
-    {/if}
-</div>
+    </div>
+<!-- {/if} -->
 
 <style>
     div {
-      z-index: 1000;
+      z-index: 10000;
       display: flex;
       flex-direction: column;
       align-items: center;

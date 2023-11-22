@@ -38,48 +38,6 @@
 	
 	let earnings = jobData.timeLimit;
 	let curTime = null;
-
-// 	const resetJob = () => {
-// 		curTime = null;
-// 		countdown = jobData.waitTime;
-// 		expired = false;
-// 		ready = false;
-//   };
-// 	onMount(() => {
-// 		expirationTimer = setInterval(() => {
-// 		if (countdown > 0) {
-// 			countdown--;
-
-// 			if (countdown === 0) {
-// 			// Job is ready
-// 				logHistory
-// 				curTime = get(elapsed);
-// 				ready = true;
-// 			}
-// 		} else if (curTime !== null) {
-// 			const elapsedTime = get(elapsed);
-// 			if (elapsedTime - curTime >= expirationTime) {
-// 			// Job has expired
-// 				expired = true;
-// 				ready = false; // Set ready to false when the job expires
-// 				curTime = null; // Reset the current time
-// 				logHistory(`i:(${jobData.index}) Job ${title} has expired`);
-// 				generateSingleData(id);
-// 				console.log('curr info:'+ jobData.type + jobData.city  + jobData.waitTime +' '+ jobData.timeLimit);
-// 				resetJob();
-// 				// clearInterval(expirationTimer); // Stop the timer
-// 			}
-// 		}
-// 		if (get(elapsed) >= FullTimeLimit) {
-//             clearInterval(expirationTimer); // Stop the timer when the time is up
-//         }
-// 		}, 1000);
-// 	});
-
-// 	onDestroy(() => {
-// 		clearInterval(expirationTimer);
-// 	});
-
 	let unsubscribeElapsed;
 
 	onMount(() => {
@@ -92,19 +50,19 @@
 					// Update job as ready in the store
 					updateJobState(jobData.id, true, false);
 					curTime = get(elapsed);
-					logHistory(`i:(${jobData.index}) Job ${title} now available`);
+					logHistory("job available", [jobData.index, title], `i:(${jobData.index}) Job ${title} now available`);
 				}
 			} else if (countdown == 0 && !jobData.ready) {
 				console.log('make job readddddyyyy!')
 				updateJobState(jobData.id, true, false);
 				curTime = get(elapsed);
-				logHistory(`i:(${jobData.index}) Job ${title} now available`);
+				logHistory("job available", [jobData.index, title], `i:(${jobData.index}) Job ${title} now available`);
 			} else if (jobData.ready && !jobData.expired && get(elapsed) - curTime >= expirationTime) {
 			// Update job as expired in the store
 				console.log('dettteeected!')
 				updateJobState(jobData.id, false, true);
 				curTime = null;
-				logHistory(`i:(${jobData.index}) Job ${title} has expired`);
+				logHistory("job expire", [jobData.index, title], `i:(${jobData.index}) Job ${title} has expired`);
 				// generateSingleData(jobData.id);
 			} 
 		});
@@ -130,7 +88,7 @@
 	function resetJob(id) {
 		updateJobState(id, false, true);
 		generateSingleData(id); 
-		logHistory(`i:(${jobData.index}) Job ${title} has been reset`);
+		// logHistory(`i:(${jobData.index}) Job ${title} has been reset`);
 	}
 		
 	// onMount(() => {

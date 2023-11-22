@@ -1,67 +1,95 @@
 <script>
     import { onMount, onDestroy } from "svelte";
-    import { get } from 'svelte/store';
+    import { get, writable } from 'svelte/store';
     import Popup from "./popup.svelte";
-    import { confirmedToStay, elapsed, leisurePay, LeisureTime } from '$lib/stores.js';
-    
-    let showPopup = false;
+    import { game, 
+            confirmedToStay, 
+            elapsed, 
+            leisurePay, 
+            LeisureTime, 
+            earned, 
+            logHistory, 
+            leisureStart } from '$lib/stores.js';
+        
+    let showPopup = writable(false);
     let interval;
     let leisureinterval;
-    LeisureTime.set(0.0);
-    let formattedTimePassed = '00:00:00'; 
-
-    const formatTime = (totalSeconds) => {
-        const hours = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
-        const minutes = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
-        const seconds = Math.floor(totalSeconds % 60).toString().padStart(2, '0');
-        return `${hours}:${minutes}:${seconds}`;
-    };
-    $: formattedTimePassed = formatTime($LeisureTime);
-    
-    const handlePopup = () => {
-        confirmedToStay.subscribe((value) => {
-            showPopup = !value;
-        });
-        showPopup = true;
-        // Set a timeout to hide the popup 5 seconds after it's shown
-        setTimeout(() => {
-            showPopup = false;
-        }, 5000);
-    };
-  
-    onMount(() => {
-      // Set an interval to show the popup every 10 seconds
-      interval = setInterval(handlePopup, 20000);
-      leisureinterval = setInterval(() => {
-            $LeisureTime++;
-		}, 1000);
-  
-      return () => {
-        clearInterval(interval);
-        clearInterval(leisureinterval);
+    let popupTimeout;
+    // Initialize leisureStart and LeisureTime
+    leisureStart.set(get(LeisureTime));
+    $: if ($showPopup) {
+    console.log('Popup should now be visible.');
+    } else {
+        console.log('Popup is inactivated')
     }
+    // LeisureTime.set(0.0);
+    // let formattedTimePassed = '00:00:00'; 
+
+    // const formatTime = (totalSeconds) => {
+    //     const hours = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
+    //     const minutes = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
+    //     const seconds = Math.floor(totalSeconds % 60).toString().padStart(2, '0');
+    //     return `${hours}:${minutes}:${seconds}`;
+    // };
+    // $: formattedTimePassed = formatTime($LeisureTime);
+    
+    
+    function showThePopup() {
+        showPopup.set(true);
+    }
+
+    function hidePopup() {
+        showPopup.set(false);
+        // Set confirmedToStay to false again so the popup will reappear
+        confirmedToStay.set(false);
+    }
+
+    onMount(() => {
+        setTimeout(showThePopup, 20000);
+        // Show Popup every 20s
+        interval = setInterval(showThePopup, 20000);
+
+        // Increment leisure time 
+        leisureinterval = setInterval(() => {
+            LeisureTime.update(n => n + 1);
+        }, 1000);
+
+        return () => {
+            clearInterval(interval);
+            clearInterval(leisureinterval);
+        };
     });
+
+    function switchToWork() {
+        $game.inChoices = false;
+        $game.inLeisure = false;
+        confirmedToStay.set(false);
+        const inLeisureTime = get(LeisureTime) - get(leisureStart);
+        const earning = parseFloat(( inLeisureTime * leisurePay).toFixed(2));
+        earned.update((n) => {
+            const updatedValue = parseFloat((n + earning).toFixed(2));
+            return updatedValue;
+        });
+        // clearInterval(timer);
+        logHistory("switch to work", [inLeisureTime, earning], 'Confirm to leave leisure, stayed for ' + inLeisureTime + 's, earned $' + earning);
+
+    }
     
 </script>
   
 <div class="container">
-    <div class="time-display">Leisure time: {formattedTimePassed}</div>
-    {#if !showPopup}
-      <p>Enjoy your leisure time!</p>
-      <p>You earn ${leisurePay.toFixed(2)} every second</p> <!-- Added toFixed(2) for currency formatting -->
+    <!-- <div class="time-display">Leisure time: {formattedTimePassed}</div> -->
+    {#if $showPopup}
+        <Popup closePopup={hidePopup}/>
     {:else}
-      <Popup class="popup" />
+        <p>Enjoy your leisure time!</p>
+        <p>You earn ${leisurePay.toFixed(2)} every second</p> 
     {/if}
+    <button on:click={switchToWork}>Switch to Work</button>
 </div>
 
   
 <style>
-    html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-    }
-  
     .container {
         position: relative;
         display: flex;
@@ -73,7 +101,7 @@
     }
 
 
-    .time-display {
+    /* .time-display {
         position: absolute;
         height: 60%;
         font-size: 2em; 
@@ -81,7 +109,7 @@
         color: #4a4a4a; 
         padding: 0.5em; 
         text-align: center; 
-    }
+    } */
   
   
     p {
@@ -90,13 +118,14 @@
         color: #4a4a4a;
     }
   
-    .popup {
-        width: 200px;
-        padding: 10px;
-        background-color: #ffffff;
-        border: 1px solid #e0e0e0;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      z-index: 1000;
     }
 </style>
 

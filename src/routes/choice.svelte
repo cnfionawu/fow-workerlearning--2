@@ -10,13 +10,13 @@
     function goToLeisure() {
         $game.inLeisure = true;
         $game.inChoices = false;
-        logHistory(`choose leisure`);
+        logHistory("choose leisure", null, `choose leisure`);
     }
 
     function goToWork() {
         $game.inChoices = false;
         $game.inLeisure = false;
-        logHistory(`choose to work`);
+        logHistory("choose work", null, `choose to work`);
     }
 </script>
   

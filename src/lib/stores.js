@@ -7,6 +7,7 @@ export const FullTimeLimit = 1200;
 let start;
 export const confirmedToStay = writable(false);
 export const LeisureTime = writable(0.0);
+export const leisureStart = writable(0.0);
 export const leisurePay = 0.01;
 export const GameOver = writable(false);
 
@@ -53,23 +54,85 @@ let historyData = [];
 const historydata = history.subscribe(($history) => {
   historyData = $history; 
 })
-// export const print = writable([]);
 function uploadData() {
 	const gameArrToSend = JSON.stringify(historyData);
-	// print.set([gameArrToSend]);
 	console.log('Sending experiment result:', gameArrToSend);
 	console.log('Type of experiment result:', typeof gameArrToSend);
 	window.parent.postMessage({ type: 'gameArr', data: gameArrToSend }, '*');
 } 
 
-export function logHistory(message) {
+// Store Data
+const eventMapping = {
+	"start game": 0,
+	"choose work": 1,
+	"enter home screen": 2,
+	"job available": 3,
+	"job expire": 4,
+	"start job": 5,
+	"guess result": 6,
+	"copy paste": 7,
+	"finish job": 8,
+	"rate": 9,
+	"choose leisure": 10,
+	"confirm stay in leisure": 11,
+	"confirm leave leisure": 12,
+	"didn't choose": 13,
+	"switch to leisure": 14,
+	"switch to work": 15,
+	"finish game": 16
+  };
+  
+  // Count of each event type
+const eventCounts = {};
+
+// export function logHistory(message, specific = null) {
+// 	console.log('DEBUG', t);
+// 	history.update((list) => {
+// 	  const eventId = eventMapping[message] || 'unknown_event';
+// 	  const eventCount = (eventCounts[eventId] = (eventCounts[eventId] || 0) + 1);
+// 	  const eventTime = t || 0.0;
+// 	  const eventData = {
+// 		time: eventTime.toFixed(3), // Format to 3 decimal places
+// 		event_description: eventId,
+// 		count: eventCount,
+// 		coredata: specific, // This could be a parameter of the function
+// 		full_message: message,
+// 	  };
+// 	  list.push(eventData);
+// 	  console.log(list);
+// 	  return list;
+// 	});
+//   }
+export function logHistory(eventKey, specific = null, message) {
 	console.log('DEBUG', t);
+	const eventId = eventMapping[eventKey];
+	if (eventId === undefined) {
+		console.error(`Unknown event key: ${eventKey}`);
+		return;
+	}
+	const eventCount = (eventCounts[eventId] = (eventCounts[eventId] || 0) + 1);
+	const eventTime = t || 0.0;
+	const eventData = {
+	  time: eventTime.toFixed(3), // Format to 3 decimal places
+	  event_id: eventId,
+	  count: eventCount,
+	  core_data: specific,
+	  full_message: message,
+	};
 	history.update((list) => {
-		list.push({ time: t || 0.0, event: message });
-		console.log(list);
-		return list;
+	  list.push(eventData);
+	  console.log(list);
+	  return list;
 	});
 }
+// export function logHistory(message) {
+// 	console.log('DEBUG', t);
+// 	history.update((list) => {
+// 		list.push({ time: t || 0.0, event: message });
+// 		console.log(list);
+// 		return list;
+// 	});
+// }
 
 /* Home Screen Jobs */
 export const jobs = writable([
@@ -165,8 +228,8 @@ export function generateSingleData(id) {
 		return currentJobs;
 	});
 }
-/* Game State */
 
+/* Game State */
 export const earned = writable(0);
 export const currLocation = writable('Berkeley');
 
@@ -205,5 +268,6 @@ export function endGame(gained, gameState) {
 	gameState.inSummary = true;
 	game.set(gameState);
 }
+
 
 export const elapsed = derived(timeStamp, ($timeStamp) => Math.round($timeStamp / 1000));

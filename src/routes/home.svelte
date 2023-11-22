@@ -6,7 +6,7 @@
   
 	function switchToLeisure() {
 		$game.inLeisure = true;
-		logHistory('choose Switch to Leisure')
+		logHistory("switch to leisure", null, 'choose Switch to Leisure')
 	}
 	
 	generateData();
@@ -16,7 +16,11 @@
 			(job) =>
 				`i:(${job.index}) ${job.type} - ${job.city}: ${job.waitTime} waitTime, ${job.timeLimit} timeLimit`
 		);
-		logHistory(`Entered home screen, displayed jobs: ${JSON.stringify(jobStrings)}`);
+		const joblists = $jobs.map(
+			(job) =>
+			[job.index, job.waitTime, job.timeLimit]
+		)
+		logHistory("enter home screen", joblists, `Entered home screen, displayed jobs: ${JSON.stringify(jobStrings)}`);
 		// generateData();
 	});
 </script>

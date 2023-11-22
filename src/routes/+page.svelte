@@ -14,8 +14,10 @@
 		logHistory,
 		resetTimer,
 		currLocation,
-		FullTimeLimit
+		FullTimeLimit,
+		LeisureTime
 	} from '$lib/stores.js';
+	import { get } from 'svelte/store';
 
 	$: inGame = $game.inGame;
 	$: timeUp = $elapsed > FullTimeLimit;
@@ -29,7 +31,7 @@
 	function initializeGame() {
 		started = true;
 		resetTimer();
-		logHistory(`${userName} started a game with ${FullTimeLimit} timeLimit`);
+		logHistory("start game", userName, `${userName} started a game with ${FullTimeLimit} timeLimit`);
 	}
 
 	function goToLeisureOrWork() {
@@ -51,6 +53,7 @@
 	<div class="hud">
 		<h3 class:err={timeUp}>Time limit: {FullTimeLimit}</h3>
 		<p><b>Time</b>: {$elapsed}s</p>
+		<p><b>Leisure Time</b>: {$LeisureTime}s</p>
 		<p><b>Earned</b>: ${$earned}</p>
 		<p><b>Location</b>: {$currLocation}</p>
 		<p><i>Takes 5 seconds to go to {$currLocation === 'SF' ? 'Berkeley' : 'SF'}</i></p>
@@ -85,11 +88,11 @@
 {/if}
 
 <!-- debug -->
-<!-- <div>
+<div>
 	<i class="debug">history:</i>
-	{JSON.stringify($history)} -->
+	{JSON.stringify($history)}
 	<!-- <p>uploaded: {$print}</p> -->
-<!-- </div> -->
+</div>
 
 
 <style>
@@ -101,8 +104,12 @@
 		width: 100vw;
 		z-index: 1000;
 		text-align: center;
+		font-size: 30px;
 		/* z-index: 99999999999999999 !important; */
 		background-color: rgba(128, 128, 128, 0.519);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	.debug {
 		margin-top: 100px;

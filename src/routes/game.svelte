@@ -39,7 +39,7 @@
 	/* Start Timer */
 	onMount(() => {
 		logHistory(
-			`Task ${job} was started with: ${stepsLeft} steps, ${timeLimit} timeLimit, ${hardLimit} hardLimit`
+			"start job", [job, stepsLeft, timeLimit, hardLimit], `Task ${job} was started with: ${stepsLeft} steps, ${timeLimit} timeLimit, ${hardLimit} hardLimit`
 		);
 		setInterval(() => {
 			if (stepsLeft > 0) {
@@ -52,7 +52,7 @@
 		if (stepsLeft <= 0) return;
 		const userAnswer = userInput.toLowerCase();
 		if (userAnswer === currentWord) {
-			logHistory(`(${stepsLeft}) Correct Guess: ${currentWord}`);
+			logHistory("guess result", [stepsLeft, true, currentWord], `(${stepsLeft}) Correct Guess: ${currentWord}`);
 			displayStatus = 'Correct!';
 			userInput = '';
 			stepsLeft--;
@@ -61,7 +61,7 @@
 				currentWord = pickWord(wordBank);
 			}
 		} else {
-			logHistory(`(${stepsLeft}) Incorrect Guess: ${currentWord}, mistyped ${userAnswer}`);
+			logHistory("guess result", [stepsLeft, false, currentWord, userAnswer], `(${stepsLeft}) Incorrect Guess: ${currentWord}, mistyped ${userAnswer}`);
 			displayStatus = 'Incorrect. Try again.';
 			mistakes++;
 		}
@@ -76,7 +76,7 @@
 			checkGuess();
 		}
 		if ((event.ctrlKey || event.metaKey) && event.key === 'v') {
-			logHistory('Paste action detected');
+			logHistory("copy paste", currentWord, 'Paste action detected');
 		}
 	}
 
@@ -94,7 +94,7 @@
 		
 		console.log(earned);
 		logHistory(
-			`Ended with: ${mistakes} mistakes, ${earned} earned, ${timePassed} in game time passed`
+			"finish job", [mistakes, earned, timePassed], `Ended with: ${mistakes} mistakes, ${earned} earned, ${timePassed} in game time passed`
 		);
 
 		const gameState = {};
