@@ -23,7 +23,6 @@ body {
 .card {
 	flex-basis: calc(50% - 40px);
 	margin: 20px;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -33,6 +32,9 @@ body {
 	width: 250px;
 	height: 250px;
 	text-align: center;
+	border-radius: 8px; /* Rounded corners */
+  	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  	transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
 /* JOB READY ANIMATION */
@@ -47,6 +49,7 @@ body {
 }
 .ready {
 	animation: jobanimate 0.5s infinite alternate;
+	/* font-weight: bold; */
 }
 .ready:hover {
 	cursor: pointer;

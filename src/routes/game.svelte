@@ -141,7 +141,7 @@
 			Timer: {timeLimit - timePassed}
 			<!-- (Debug time taken: {timePassed}) -->
 		</h3>
-		<p>Left: {stepsLeft}</p>
+		<p>Task Left: {stepsLeft}</p>
 
 		<img id="input-img" src="./images/{currentWord}.jpg" alt="img" />
 		<input bind:value={userInput} type="text" placeholder="Input" on:keydown={handleKeyUp} />

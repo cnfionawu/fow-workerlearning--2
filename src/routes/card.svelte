@@ -90,32 +90,6 @@
 		generateSingleData(id); 
 		// logHistory(`i:(${jobData.index}) Job ${title} has been reset`);
 	}
-		
-	// onMount(() => {
-	// 	setInterval(() => {
-	// 		countdown--;
-	// 	}, 1000);
-	// });
-
-	// $: ready = countdown <= 0;
-	// $: {
-	// 	if (ready) {
-	// 		logHistory(`i:(${jobData.index}) Job ${title} now available`);
-	// 		curTime = get(elapsed);
-	// 		console.log(curTime);
-	// 	}
-	// }
-	// $: expired = $elapsed - curTime >= expirationTime;
-	// $: {
-	// 	if (countdown <= 0) 
-	// 	if (expired) {
-	// 		// ready = false;
-	// 		console.log(jobData.type + jobData.city + ': expirrrrrrrrrrrrrre!!!!!');
-	// 		logHistory(`i:(${jobData.index}) Job ${title} has expired`);
-	// 		generateSingleData(id);
-	// 	}
-	// }
-
 
 	function start() {
 		// console.log('DEBUG:', countdown, countdown <= 0);
