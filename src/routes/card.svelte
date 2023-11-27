@@ -97,15 +97,15 @@
 			// logHistory(`chose task ${title}`);
 			let hardLimit = jobData.timeLimit * 2;
 
-			if ($currLocation !== jobData.city) {
-				currLocation.set('');
-				// wait for 5 sec
-				setTimeout(() => {
-					currLocation.set(jobData.city);
-				}, 5000);
-				startGame(title, earnings, numSteps, timeLimit, hardLimit);
-				resetJob(id)
-			}
+			// if ($currLocation !== jobData.city) {
+			// 	currLocation.set('');
+			// 	// wait for 5 sec
+			// 	setTimeout(() => {
+			// 		currLocation.set(jobData.city);
+			// 	}, 5000);
+			// 	startGame(title, earnings, numSteps, timeLimit, hardLimit);
+			// 	resetJob(id)
+			// }
 			startGame(title, earnings, numSteps, timeLimit, hardLimit);
 			resetJob(id)
 			

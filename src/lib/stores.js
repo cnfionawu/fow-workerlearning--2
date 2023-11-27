@@ -79,7 +79,8 @@ const eventMapping = {
 	"didn't choose": 13,
 	"switch to leisure": 14,
 	"switch to work": 15,
-	"finish game": 16
+	"finish game": 16,
+	"switch location": 17
   };
   
   // Count of each event type
@@ -232,6 +233,7 @@ export function generateSingleData(id) {
 /* Game State */
 export const earned = writable(0);
 export const currLocation = writable('Berkeley');
+export const changeLocation = writable(false);
 
 export const game = writable({
 	inGame: false,

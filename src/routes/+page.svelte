@@ -15,7 +15,8 @@
 		resetTimer,
 		currLocation,
 		FullTimeLimit,
-		LeisureTime
+		LeisureTime,
+		changeLocation
 	} from '$lib/stores.js';
 	import { get } from 'svelte/store';
 
@@ -83,14 +84,14 @@
 	<Home />
 {/if}
 
-{#if $currLocation === ''}
+{#if $changeLocation === true}
 	<div class="traveling">Traveling ...</div>
 {/if}
 
 <!-- debug -->
 <div>
-	<i class="debug">history:</i>
-	{JSON.stringify($history)}
+	<!-- <i class="debug">history:</i> -->
+	<!-- {JSON.stringify($history)} -->
 	<!-- <p>uploaded: {$print}</p> -->
 </div>
 
