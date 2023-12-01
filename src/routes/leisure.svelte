@@ -4,7 +4,6 @@
     import Popup from "./popup.svelte";
     import { game, 
             confirmedToStay, 
-            elapsed, 
             leisurePay, 
             LeisureTime, 
             earned, 
@@ -14,25 +13,15 @@
     let showPopup = writable(false);
     let interval;
     let leisureinterval;
-    let popupTimeout;
+ 
     // Initialize leisureStart and LeisureTime
     leisureStart.set(get(LeisureTime));
+    // Debug
     $: if ($showPopup) {
     console.log('Popup should now be visible.');
     } else {
         console.log('Popup is inactivated')
     }
-    // LeisureTime.set(0.0);
-    // let formattedTimePassed = '00:00:00'; 
-
-    // const formatTime = (totalSeconds) => {
-    //     const hours = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
-    //     const minutes = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
-    //     const seconds = Math.floor(totalSeconds % 60).toString().padStart(2, '0');
-    //     return `${hours}:${minutes}:${seconds}`;
-    // };
-    // $: formattedTimePassed = formatTime($LeisureTime);
-    
     
     function showThePopup() {
         showPopup.set(true);
@@ -60,6 +49,7 @@
         };
     });
 
+    // Choose to leave leisure, go to work
     function switchToWork() {
         $game.inChoices = false;
         $game.inLeisure = false;
@@ -70,7 +60,6 @@
             const updatedValue = parseFloat((n + earning).toFixed(2));
             return updatedValue;
         });
-        // clearInterval(timer);
         logHistory("switch to work", [inLeisureTime, earning], 'Confirm to leave leisure, stayed for ' + inLeisureTime + 's, earned $' + earning);
 
     }
@@ -78,7 +67,6 @@
 </script>
   
 <div class="container">
-    <!-- <div class="time-display">Leisure time: {formattedTimePassed}</div> -->
     {#if $showPopup}
         <Popup closePopup={hidePopup}/>
     {:else}
@@ -99,18 +87,6 @@
         min-height: 100vh;
         text-align: center; 
     }
-
-
-    /* .time-display {
-        position: absolute;
-        height: 60%;
-        font-size: 2em; 
-        margin: 0.5em 0; 
-        color: #4a4a4a; 
-        padding: 0.5em; 
-        text-align: center; 
-    } */
-  
   
     p {
         margin: 0 0 10px 0;

@@ -86,24 +86,6 @@ const eventMapping = {
   // Count of each event type
 const eventCounts = {};
 
-// export function logHistory(message, specific = null) {
-// 	console.log('DEBUG', t);
-// 	history.update((list) => {
-// 	  const eventId = eventMapping[message] || 'unknown_event';
-// 	  const eventCount = (eventCounts[eventId] = (eventCounts[eventId] || 0) + 1);
-// 	  const eventTime = t || 0.0;
-// 	  const eventData = {
-// 		time: eventTime.toFixed(3), // Format to 3 decimal places
-// 		event_description: eventId,
-// 		count: eventCount,
-// 		coredata: specific, // This could be a parameter of the function
-// 		full_message: message,
-// 	  };
-// 	  list.push(eventData);
-// 	  console.log(list);
-// 	  return list;
-// 	});
-//   }
 export function logHistory(eventKey, specific = null, message) {
 	console.log('DEBUG', t);
 	const eventId = eventMapping[eventKey];
@@ -195,6 +177,7 @@ export const jobs = writable([
 	}
 ]);
 
+// Generate job data from database
 export function generateData() {
 	jobs.update(currentJobs => {
 	  for (let i = 0; i < 4; i++) {
@@ -271,5 +254,5 @@ export function endGame(gained, gameState) {
 	game.set(gameState);
 }
 
-
+// elapsed time shared on every page
 export const elapsed = derived(timeStamp, ($timeStamp) => Math.round($timeStamp / 1000));

@@ -1,11 +1,10 @@
+<!-- Leisure popup notice page -->
 <script>
     import { onMount, onDestroy } from 'svelte';
     import { get } from 'svelte/store';
     import {
-		elapsed,
 		game,
 		earned,
-		history,
 		logHistory,
         LeisureTime,
         leisurePay,
@@ -14,10 +13,10 @@
 	} from '$lib/stores.js';
 
     let timer;
-    let stayTime;
     let earning;
     export let closePopup; 
 
+// Check user confirm to stay or leave leisure or no response
     const confirmStay = () => {
         confirmedToStay.set(true);
         clearTimeout(timer);
@@ -58,13 +57,11 @@
     
 </script>
   
-<!-- {#if !get(confirmedToStay)} -->
-    <div>
-        <p>Are you still there? Click YES within 5 seconds to stay in leisure.</p>
-        <button on:click={confirmStay}>YES</button>
-        <button on:click={cancelStay}>NO</button>
-    </div>
-<!-- {/if} -->
+<div>
+    <p>Are you still there? Click YES within 5 seconds to stay in leisure.</p>
+    <button on:click={confirmStay}>YES</button>
+    <button on:click={cancelStay}>NO</button>
+</div>
 
 <style>
     div {

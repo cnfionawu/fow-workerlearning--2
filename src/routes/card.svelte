@@ -1,10 +1,9 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
 	import { get } from 'svelte/store';
-	import { startGame, logHistory, currLocation, elapsed, generateSingleData, FullTimeLimit, jobs } from '$lib/stores.js';
-	import { data } from '$lib/data.js';
-	
+	import { startGame, logHistory, elapsed, generateSingleData, jobs } from '$lib/stores.js';
 
+	// time duration of each task
 	const SECONDS_PER_JOB_UBER = 2;
 	const SECONDS_PER_JOB_UBEREats = 3;
 	const expirationTime = 20;
@@ -46,24 +45,20 @@
 			if (countdown > 0) {
 				countdown--;
 				if (countdown === 0) {
-					console.log('make job readddddyyyy!')
 					// Update job as ready in the store
 					updateJobState(jobData.id, true, false);
 					curTime = get(elapsed);
 					logHistory("job available", [jobData.index, title], `i:(${jobData.index}) Job ${title} now available`);
 				}
 			} else if (countdown == 0 && !jobData.ready) {
-				console.log('make job readddddyyyy!')
 				updateJobState(jobData.id, true, false);
 				curTime = get(elapsed);
 				logHistory("job available", [jobData.index, title], `i:(${jobData.index}) Job ${title} now available`);
 			} else if (jobData.ready && !jobData.expired && get(elapsed) - curTime >= expirationTime) {
 			// Update job as expired in the store
-				console.log('dettteeected!')
 				updateJobState(jobData.id, false, true);
 				curTime = null;
 				logHistory("job expire", [jobData.index, title], `i:(${jobData.index}) Job ${title} has expired`);
-				// generateSingleData(jobData.id);
 			} 
 		});
 	});
@@ -85,27 +80,16 @@
 			return allJobs;
 			});
 	}
+	// regenerate new data for picked job
 	function resetJob(id) {
 		updateJobState(id, false, true);
 		generateSingleData(id); 
-		// logHistory(`i:(${jobData.index}) Job ${title} has been reset`);
 	}
 
 	function start() {
 		// console.log('DEBUG:', countdown, countdown <= 0);
 		if (jobData.ready) {
-			// logHistory(`chose task ${title}`);
 			let hardLimit = jobData.timeLimit * 2;
-
-			// if ($currLocation !== jobData.city) {
-			// 	currLocation.set('');
-			// 	// wait for 5 sec
-			// 	setTimeout(() => {
-			// 		currLocation.set(jobData.city);
-			// 	}, 5000);
-			// 	startGame(title, earnings, numSteps, timeLimit, hardLimit);
-			// 	resetJob(id)
-			// }
 			startGame(title, earnings, numSteps, timeLimit, hardLimit);
 			resetJob(id)
 			

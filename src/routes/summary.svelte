@@ -1,11 +1,8 @@
 <script>
 	import '../app.css';
-	import { history, game, logHistory } from '$lib/stores.js';
-
-	// console.log($game);
+	import { game, logHistory } from '$lib/stores.js';
 
 	/* previous game */
-	// const prevGameState = $history[$history.length - 1];
 	const prevGameState = $game;
 	let job = prevGameState.title;
 	let time = prevGameState.time;
@@ -42,23 +39,8 @@
 	{/if}
 	<p>You made {mistake} mistakes</p>
 	<p>You earned ${earning}</p>
-
-	<!-- slider -->
-	<!-- <h4>Rate your proficiency on this job:</h4>
-	<div class="slider-container">
-		<div class="slider-label">{proficiencyText[1]}</div>
-		<input
-			type="range"
-			min="-1"
-			max="1"
-			step="1"
-			class="slider"
-			bind:value={rating}
-			on:input={storeRating}
-		/>
-		<div class="slider-label">{proficiencyText[0]}</div>
-	</div> -->
 	<h4>Rate your proficiency on this job:</h4>
+	<!-- star rating -->
 	<div class="rating">
 		<div class="left-label">still learning</div>
 			<input type="radio" name="star" class="star-5" id="star-5" bind:group={rating} value="5" />
@@ -73,8 +55,6 @@
             <label class="star" for="star-1"></label>
 		<div class="right-label">proficient</div>
 	</div>
-	
-
 
 	<button on:click={returnHome} disabled={!isRatingSelected}>Return</button>
 </div>
@@ -108,19 +88,6 @@
 		margin: 5px 0;
 	}
 
-	/* .slider-container {
-		display: flex;
-		align-items: center;
-	}
-
-	.slider {
-		width: 200px;
-		margin: 0 10px;
-	}
-
-	.slider-label {
-		font-size: 16px;
-	} */
 	.rating {
 		display: flex;
 		align-items: center;

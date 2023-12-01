@@ -1,9 +1,6 @@
 <script>
     import {
-		elapsed,
 		game,
-		earned,
-		history,
 		logHistory
 	} from '$lib/stores.js';
 

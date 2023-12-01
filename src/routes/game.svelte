@@ -12,18 +12,16 @@
 	let penalty = 0;
 
 	/* WORD LIST */
-	// function pickRandomWord(wordBank, seed) {
-	// 	const randomIndex = seededRandom(seed, 0, wordBank.length - 1);
-	// 	return wordBank[randomIndex];
-	// }
 	function pickWord(wordBank) {
 		const randI = Math.floor(Math.random(wordBank.length) * wordBank.length);
 		return wordBank[randI];
 	}
+
+	// define typing words here
 	const wordBank = $game.isUberEats
 		? ['apple', 'coconut', 'banana', 'pineapple']
 		: ['red', 'green', 'yellow'];
-	// let currentWord = wordBank[stepsLeft % wordBank.length];
+
 	let currentWord = pickWord(wordBank);
 	let mistakes = 0;
 
@@ -106,21 +104,10 @@
 		gameState.time = timePassed;
 		gameState.hardLimit = hardLimit;
 
-		// history.update((list) => {
-		// // 	list.push({
-		// //     status: 'finished',
-		// //     mistakes: mistakes,
-		// // 	earning: $game.earnings - penalty,
-		// //     time: timePassed,
-		// // });
-		// 	list[$history.length - 1] = lastEntry;
-		// 	return list;
-		// });
-		// const penalty = timePassed > timeLimit ? Math.min(timePassed - timeLimit, $game.earnings) : 0;
-		// endGame($game.earnings - penalty);
 		endGame(earned, gameState);
 	}
-
+	
+	// reactive element
 	$: {
 		status = displayStatus;
 
@@ -142,7 +129,7 @@
 			<!-- (Debug time taken: {timePassed}) -->
 		</h3>
 		<p>Task Left: {stepsLeft}</p>
-
+		<!-- show image corresponding to the current word -->
 		<img id="input-img" src="./images/{currentWord}.jpg" alt="img" />
 		<input bind:value={userInput} type="text" placeholder="Input" on:keydown={handleKeyUp} />
 

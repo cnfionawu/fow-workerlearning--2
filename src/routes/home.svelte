@@ -2,12 +2,12 @@
 	import Card from './card.svelte';
 	import { onMount } from 'svelte';
 	import { logHistory, jobs, generateData, game, currLocation, changeLocation } from '$lib/stores.js';
-	import { data } from '$lib/data.js';
   
 	function switchToLeisure() {
 		$game.inLeisure = true;
 		logHistory("switch to leisure", null, 'choose Switch to Leisure')
 	}
+	// link with button, switch location
 	function switchLocation() {	
 		changeLocation.set(true);
 		setTimeout(() => {
@@ -19,6 +19,7 @@
 	
 	generateData();
 
+	// update job data, log history
 	onMount(() => {
 		const jobStrings = $jobs.map(
 			(job) =>
@@ -29,7 +30,6 @@
 			[job.index, job.waitTime, job.timeLimit]
 		)
 		logHistory("enter home screen", joblists, `Entered home screen, displayed jobs: ${JSON.stringify(jobStrings)}`);
-		// generateData();
 	});
 </script>
 
@@ -37,7 +37,8 @@
 	<button on:click={switchToLeisure}>Switch to Leisure</button>
 </div>
 <div class="choices">
-	<!-- <button on:click={switchToLeisure}>Switch to Leisure</button> -->
+	<!-- each job is a Card element in card.svelte; 
+		only show jobs of current location -->
 	{#if $currLocation ==='Berkeley'}
 		<Card jobData={$jobs[3]} color="#ecb98d" />
 		<Card jobData={$jobs[2]} color="#eea7cf" />

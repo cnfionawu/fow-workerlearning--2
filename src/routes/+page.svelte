@@ -10,7 +10,6 @@
 		elapsed,
 		game,
 		earned,
-		history,
 		logHistory,
 		resetTimer,
 		currLocation,
@@ -18,7 +17,6 @@
 		LeisureTime,
 		changeLocation
 	} from '$lib/stores.js';
-	import { get } from 'svelte/store';
 
 	$: inGame = $game.inGame;
 	$: timeUp = $elapsed > FullTimeLimit;
@@ -29,6 +27,7 @@
 
 	let started = false;
 	let userName = '';
+
 	function initializeGame() {
 		started = true;
 		resetTimer();
@@ -39,17 +38,9 @@
 		$game.inChoices = true;
 	}
 
-	// $: {
-	// 	if (timeUp) {
-	// 		const gameArrToSend = JSON.stringify($history);
-	// 		console.log('Sending experiment result:', gameArrToSend);
-	// 		console.log('Type of experiment result:', typeof gameArrToSend);
-	// 		window.parent.postMessage({ type: 'gameArr', data: gameArrToSend }, '*');
-	// 	}
-	// }
-
 </script>
 
+<!-- info shared on all pages -->
 {#if !timeUp && started}
 	<div class="hud">
 		<h3 class:err={timeUp}>Time limit: {FullTimeLimit}</h3>
