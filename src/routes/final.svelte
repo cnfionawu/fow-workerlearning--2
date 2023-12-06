@@ -5,7 +5,7 @@
 
     // check if game is over
 	onMount(() => {
-		logHistory("finish game", earned, 'Finished Game, total earning is $' + get(earned));
+		logHistory("finish game", get(earned), 'Finished Game, total earning is $' + get(earned));
         GameOver.set(true);
 	});
 </script>
